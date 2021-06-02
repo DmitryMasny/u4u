@@ -13,7 +13,7 @@ import {
 import { getPagesStructure } from "__TS/products/pagesTypes";
 
 
-const SECRET_KEY = 'a040e40d-0b3e-4f69-ba6c-3ce4ec9bf581';
+const SECRET_KEY = 'a040e40d-0b3e-4f69-ba6c-3ce4ec9bf580';
 
 const generatePdf = ( { areasListIds, areasTypesAreas, state, productLayoutGroupSlug, isPuzzlePreview = false, areasTypesList } ) => {
     let pdfs = areasListIds.map( ( areaId, index ) => {
