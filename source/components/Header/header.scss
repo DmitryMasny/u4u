@@ -1,0 +1,143 @@
+@import "~scss/config";
+
+.header {
+    width: 100%;
+    background-color: $color-white;
+    box-shadow: 0 1px 1px rgba($color-charcoal, .2);
+    z-index: 50;
+    &-top {
+        width: 100%;
+        height: $header-top-height;
+        display: flex;
+        @include media(sm){
+            height: $header-top-height-sm;
+        }
+        &.fixed {
+            position: fixed;
+            top: 0;
+            background-color: $color-white;
+            //transition: box-shadow .2s ease-out;
+        }
+        &.scrolled {
+            box-shadow: 0 1px 1px rgba($color-charcoal, .2);
+        }
+    }
+    &-bottom {
+        width: 100%;
+        height: $header-bottom-height;
+        display: flex;
+    }
+    &-inner {
+        composes: section from global;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-top-right-menu {
+        display: flex;
+        align-items: center;
+        line-height: 0.9em;
+    }
+}
+.header-logo {
+    display: flex;
+    //height: 100%;
+    //width: 75px;
+    width: 100px;
+    @include media(sm) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        margin: 0 auto;
+    }
+}
+
+.ie{
+    width: 100%;
+    background-color: $color-danger;
+    transition: background-color $animation-duration-slow ease-out;
+    &.show-browsers{
+        background-color: $color-info;
+    }
+    &-inner {
+        composes: section from global;
+        color: $color-white;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include media(sm) {
+            flex-direction: column;
+        }
+    }
+    &-side {
+       padding: 10px 20px;
+    }
+    &-btn {
+        height: 40px;
+        padding: 0 10px;
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        margin: 0 5px;
+        &:hover{
+            background-color: rgba($color-white, .2);
+        }
+        &.main {
+            background-color: rgba($color-white, .88);
+            color: $color-text-danger;
+            transition: background-color $animation-duration-fast ease-out;
+            &:hover{
+                background-color: rgba($color-white, 1);
+            }
+        }
+        &.icon {
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            background-color: rgba($color-white, .88);
+            transition: background-color $animation-duration-fast ease-out, transform $animation-duration-medium ease-out;
+            &:hover{
+                background-color: rgba($color-white, 1);
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+.side-menu-btn {
+    display: inline-flex;
+    margin: 0 $main-grid-padding*-1;
+    padding: 0 ($main-grid-padding - 2);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    cursor: pointer;
+    &:hover{
+        fill: $color-text-primary;
+    }
+}
+
+.cart {
+    position: relative;
+    padding-right: 15px;
+    &-quantity {
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: $color-warning;
+        color: $color-white;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 15px;
+    }
+}

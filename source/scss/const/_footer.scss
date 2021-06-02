@@ -1,0 +1,14 @@
+//=== ФУТЕР ===
+
+$footer-font-size: 14px;                         // Размер текста
+$footer-font-weight: 600;                        // Толщина текста
+$footer-padding: $main-padding;                  // padding кнопки
+$footer-bg: $color-charcoal;                     // Цвет фона
+$footer-base-color: $color-raven;                // Цвет по-умолчанию
+$footer-color: $color-nepal;                     // Цвет пункта меню
+$footer-link-color: $color-cadetGray;                // Цвет ссылки пункта меню
+$footer-color-active: lighten($color-ecstasy, 5%);  // Цвет активной ссылки (подсвечен текущий раздел)
+$footer-color-hover: lighten($color-denim, 5%);     // Цвет при hover
+$footer-decoration-color: rgba($color-raven,.33);                     // Цвет подчеркивания подпункта
+$footer-link-decoration-color: rgba($footer-link-color,.33);          // Цвет подчеркивания ссылки
+$footer-link-decoration-color-hover: rgba($footer-color-hover,.33);   // Цвет подчеркивания ссылки при hover

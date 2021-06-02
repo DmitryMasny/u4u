@@ -1,0 +1,11 @@
+@import "~scss/config";
+
+.breadcrumbs {
+    background-color: $main-page-bg;
+    &-inner{
+        composes: section from global;
+        padding-top: $main-padding;
+        font-size: 15px;
+        height: $breadcrumbs-height;
+    }
+}

@@ -1,0 +1,12 @@
+//==== GRID. Общие величины верстки ===
+
+$main-padding: 10px;                    // Отступы от краев экрана
+$main-font-size: 16px;                  // Размер текста
+$main-icon-size: 24px;                  // Размер иконок
+$main-grid-padding: $main-padding*2;    // Отступы сетки
+$main-margin-bottom: 15px;              // Отступ снизу
+$main-narrow-width: 900px;              // Максимальная ширина зауженного блока
+$main-margin: $main-padding*3;          // Отступы снизу/сверху для внутренних блоков
+$main-margin-lg: $main-padding*5;       // Отступы снизу сверху для основного блока
+
+$modal-width-lg: 900px;

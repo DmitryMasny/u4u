@@ -1,0 +1,552 @@
+@import "~scss/config";
+
+@-webkit-keyframes global-progress-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+.my-photos {
+
+    &-all {
+    }
+
+    &-upload {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        //border: 4px dashed $color-lavenderMist;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        text-align: center;
+        //cursor: pointer;
+        //transition: border-color $animation-duration-fast ease-out;
+        //&.active{
+        //    border-color: rgba($color-primary, .5);
+        //}
+        @include media(sm) {
+            padding: 0 10px;
+            @include orientation(landscape) {
+                margin-bottom: 5px;
+            }
+        }
+        //&-title {
+        //    text-transform: uppercase;
+        //    font-weight: bold;
+        //    color: $color-text-info;
+        //    margin: 20px 0;
+        //}
+        &-text {
+            //margin: 10px 0;
+            @include media(sm) {
+                display: none;
+            }
+            &.formatUploadInfo {
+                color: $color-text-info;
+                margin-bottom: 30px;
+                .helpText {
+                    border-bottom: 2px dashed $color-text-info;
+                }
+            }
+        }
+        &-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            min-height: 60px;
+            background-color: $color-primary;
+            color: $color-white;
+            cursor: pointer;
+            user-select: none;
+            flex-shrink: 0;
+            transition: background-color $animation-duration-fast ease-out;
+            @include media(xs) {
+                min-height: 40px;
+                padding: 0 12px;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            &:hover {
+                background-color: lighten($color-primary, 5%);
+            }
+        }
+        &-thumb {
+            &s-wrap {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 10px -5px 0;
+                padding: 10px 0;
+                max-height: 260px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                font-size: 36px;
+                @include media(sm) {
+                    max-height: 220px;
+                }
+            }
+
+            position: relative;
+            width: 96px;
+            height: 72px;
+            background-color: $color-lavenderMist;
+            border-radius: 4px;
+            margin: 0 5px 10px;
+            text-align: center;
+            overflow: hidden;
+            &.loading {
+            }
+            &.loaded {
+                .my-photos-upload-thumb-text {
+                    background-color: transparent;
+                }
+            }
+            &.error {
+                background-color: $color-white;
+                .my-photos-upload-thumb-text {
+                    background-color: rgba($color-danger, .6);
+                    color: $color-white;
+                }
+            }
+
+            &-image {
+                width: auto;
+                padding: 0;
+                font-size: 0;
+                height: 100%;
+            }
+            &-text {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                padding: 5px;
+                text-align: center;
+                font-size: 14px;
+                background-color: rgba($color-white, .7);
+                .percent {
+                    font-size: 18px;
+                }
+            }
+        }
+        &-global-progress{
+            margin-top: 10px;
+            height: 10px;
+            width: 100%;
+            background-color: $color-lavenderMist;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: opacity $animation-duration-fast ease-out;
+            opacity: 0;
+            &.show {
+                opacity: 1;
+            }
+            &-inner{
+                position: relative;
+                width: 0;
+                height: 10px;
+                background-color: $color-info;
+                border-radius: 4px 0 0 4px;
+                transition: width $animation-duration-slow ease-in-out;
+                box-shadow:
+                        inset 0 1px 5px rgba(255, 255, 255, 0.1),
+                        inset 0 -1px 6px rgba(0, 0, 0, 0.2);
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    background-image: linear-gradient(
+                                    -45deg,
+                                    rgba(255, 255, 255, .2) 25%,
+                                    transparent 25%,
+                                    transparent 50%,
+                                    rgba(255, 255, 255, .2) 50%,
+                                    rgba(255, 255, 255, .2) 75%,
+                                    transparent 75%,
+                                    transparent
+                    );
+                    z-index: 1;
+                    background-size: 50px 50px;
+                    animation: global-progress-animation 2s linear infinite;
+                }
+            }
+        }
+        .social {
+            &-wrap {
+                display: flex;
+                margin-bottom: 10px;
+                @include media(sm) {
+                    flex-direction: column;
+                }
+            }
+            &-btn{
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 2px;
+                padding: 0 12px;
+                font-size: 16px;
+                min-height: 40px;
+                cursor: pointer;
+                user-select: none;
+                flex-shrink: 0;
+                margin-left: 10px;
+                border: 2px solid $color-line;
+                color: $color-charcoal;
+                background-color: $color-white;
+                transition: border-color $animation-duration-fast ease-out;
+                &:hover {
+                    border-color: $color-info;
+                    color: $color-text-info;
+                }
+                &.disabled {
+                    border-color: $color-cadetGray;
+                    color: $color-text-mute;
+                    pointer-events: none;
+                    .my-photos-upload-btn-icon{
+                        filter: grayscale(.5);
+                    }
+                }
+                @include media(sm) {
+                    margin-left: 0;
+                    margin-bottom: 10px;
+                }
+                @include media(xs) {
+                    font-size: 14px;
+                }
+                .iconWrap {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 5px;
+                    fill: #fff;
+                    border-radius: 8px;
+                }
+                &-icon {
+                    margin-right: 5px;
+                }
+                &.google {}
+                &.instagram {
+                    .iconWrap {
+                        background: #f16c33;
+                        background: linear-gradient(45deg, #fcdb77 0%, #f16c33 25%, #dc2743 50%, #be2aa6 75%, #4f5ad4 100%);
+                    }
+                }
+                &.vk {
+                    .iconWrap {
+                        background: #5180b8;
+                        border-radius: 2px;
+                    }
+                }
+                &.yandex {
+                  fill: #ea3e3e;
+                }
+            }
+        }
+    }
+
+    //&-import {
+    //
+    //    &-title {
+    //        margin-bottom: 15px;
+    //        font-weight: bold;
+    //        font-size: 18px;
+    //        text-align: center;
+    //        @include media(xs) {
+    //            font-size: 16px;
+    //        }
+    //    }
+    //    &-social {
+    //        display: flex;
+    //        justify-content: center;
+    //        align-items: center;
+    //        width: 100%;
+    //        text-align: center;
+    //        &-btn {
+    //            display: flex;
+    //            justify-content: center;
+    //            align-items: center;
+    //            flex-direction: column;
+    //            padding: 0 20px;
+    //            height: 100px;
+    //            max-width: 33.33%;
+    //            cursor: pointer;
+    //            user-select: none;
+    //            @include media(xs) {
+    //                font-size: 14px;
+    //            }
+    //            &:hover {
+    //                color: $color-text-primary;
+    //                .my-photos-import-social-icon {
+    //                    opacity: .9;
+    //                }
+    //            }
+    //
+    //        }
+    //        &-name {
+    //            line-height: 1em;
+    //            height: 1em;
+    //        }
+    //    }
+    //}
+
+    &-folders {
+        &-wrap {
+            display: flex;
+            align-items: flex-start;
+        }
+        &.sm {
+            .my-photos-folders-wrap {
+                flex-direction: column;
+            }
+        }
+    }
+
+}
+
+.uploadBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    padding: 0 12px;
+    font-size: 16px;
+    min-height: 40px;
+    background-color: $color-primary;
+    color: $color-white;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    @include media(xs) {
+        font-size: 14px;
+    }
+    &:hover {
+        background-color: lighten($color-primary, 5%);
+    }
+    &-top {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        z-index: 3;
+        @include media(xs) {
+            display: none;
+        }
+    }
+    &-no-photo {
+        min-height: 50px;
+        padding: 0 20px;
+        font-size: 18px;
+    }
+    &-wrap {
+        text-align: center;
+        margin: 50px 0;
+    }
+    &-text {
+        margin-bottom: 15px;
+        color: $color-nepal;
+    }
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+}
+
+.add-to-folder {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 20px;
+    right: 20px;
+    height: 50px;
+    width: 320px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgba($color-info,.25);
+    color: $color-text-info;
+    @include media(sm) {
+        display: none;
+    }
+}
+
+.gallery {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    @include media(sm) {
+        padding: 10px 0;
+    }
+}
+
+.iFrame{
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+    padding-bottom: 40px;
+    &-panel{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 60px;
+        background-color: $color-cadetGray;
+        z-index: 5;
+        &-inner{
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+            max-width: $media-lg;
+            padding: 5px 20px;
+            height: 60px;
+            @include media(xs){
+                padding: 5px 10px;
+            }
+        }
+        &-btn{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            padding: 0 20px;
+            font-size: 21px;
+            background-color: $color-white;
+            border-radius: 2px;
+            opacity: .8;
+            transition: opacity $animation-duration-fast ease-out;
+            user-select: none;
+            cursor: pointer;
+            margin-right: 10px;
+            @include media(sm){
+                font-size: 18px;
+                padding: 0 12px;
+            }
+            @include media(xs){
+                font-size: 16px;
+                padding: 0 10px;
+            }
+            &:hover{
+                opacity: 1;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+            &-add{
+                background-color: $color-primary;
+                color: #fff;
+            }
+            &.disabled{
+                opacity: .5;
+                pointer-events: none;
+            }
+        }
+        &-icon{
+            @include media(sm){
+                display: none;
+            }
+        }
+        &-divider{
+           flex-grow: 1;
+        }
+    }
+}
+
+.loadMore{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+    margin-bottom: -50px;
+    &-btn{
+        display: inline-block;
+        line-height: 40px;
+        padding: 0 15px;
+        margin: 10px auto 0;
+        background-color: $color-lavenderMist;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgba($color-lavenderMist,.5);
+        }
+    }
+    &-text{
+        margin-top: 10px;
+        line-height: 40px;
+        padding: 0 15px;
+        color: $color-nepal;
+    }
+
+}
+
+.dropzone{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba($color-black, .33);
+    color: $color-white;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 18px;
+    padding: 20px;
+    z-index: 800;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+    pointer-events: none;
+    text-shadow: 1px 2px 30px $color-black;
+    &-header{
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 4px dashed $color-white;
+        border-radius: 4px;
+    }
+    &.active{
+        pointer-events: all;
+        opacity: 1;
+    }
+}
+.globalPercent{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    padding: 5px;
+    background-color: $color-athensGray;
+    @include media(sm){
+        height: 10px;
+        padding: 0;
+    }
+    &-inner{
+        height: 10px;
+        background-color: $color-info;
+        @include media(sm){
+            bottom: 0;
+        }
+    }
+}

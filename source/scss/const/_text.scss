@@ -1,0 +1,25 @@
+//==== ТЕКСТ ===
+
+//$font-exo2: 'Exo 2';
+//$font-exo2c: 'Exo 2 Condensed';
+$font-roboto: 'Roboto',-apple-system,'Helvetica Neue',sans-serif;
+$font-gilroy: 'Gilroy',-apple-system,'Helvetica Neue',sans-serif;
+
+//Текст и ссылки
+//$main-font: $font-roboto;
+$main-font: $font-gilroy;
+$main-heading-font: $font-gilroy;
+$main-color: $color-charcoal;
+$main-color-hover: $color-primary;
+$main-color-link: $color-text-primary;
+$main-color-link-hover: $color-primary;
+$text-small-size: 15px;
+$text-small-lh: $text-small-size*1.2; //16px
+
+//Заголовки
+$h1-font-size: 2.4em;
+$h1-font-weight: 400;
+$h2-font-size: 1.8em;
+$h3-font-size: 1.4em;
+$h4-font-size: 1.2em;
+$h-margin-bottom: 0.5em;

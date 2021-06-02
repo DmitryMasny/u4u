@@ -1,0 +1,52 @@
+@import "~scss/config";
+
+.sticky-panel {
+    //Главный контейнер StickyPanel
+    &-wrap {
+        height: 50px;
+        margin-bottom: 20px;
+        margin-top: -7px;
+    }
+    //fixed контейнер - портал в spa-top
+    &-fixed {
+        position: fixed;
+        height: 50px;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        z-index: 1;
+        pointer-events: none;
+        &.top{
+            top: 10px;
+        }
+        &.bottom{
+            bottom: 10px;
+        }
+        .sticky-panel-inner{
+            //box-shadow: 1px 3px 20px rgba($color-black, .2);
+            pointer-events: auto;
+            padding: 0 20px;
+            @include media(sm){
+                padding: 0;
+            }
+        }
+    }
+    // Внутренний блок для регулирования отступа
+    // padding назначается js
+    &-inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: $media-lg;
+        margin: 0 auto;
+        transition: opacity $animation-duration-medium ease-out;
+        //&.fixed  {
+        //
+        //
+        //    &.folders{
+        //        padding-left: 230px;
+        //    }
+        //}
+    }
+}

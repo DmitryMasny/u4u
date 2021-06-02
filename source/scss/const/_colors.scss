@@ -1,0 +1,39 @@
+//==== ЦВЕТА ===
+//Базовые цвета (используются исключительно в config);
+$color-white:       #fff;
+//$color-athensGray:  #ecf0f9;
+$color-athensGray:  #eef1f7;
+$color-lavenderMist:#dde5ef;
+$color-cadetGray:   #bed0dd;
+$color-nepal:       #889db5;
+$color-raven:       #6e7a8e;
+$color-charcoal:    #3d4c62;
+$color-bluegray:    #73a3d0;
+$color-black:       #131825;
+$color-hibiscus:    #cc2f69;
+$color-denim:       #137ed5;
+//$color-blue:        #2099d0;
+$color-blue:        #32a5da;
+$color-ecstasy:     #f68225;
+$color-valencia:    #d83f46;
+$color-apple:       #53a529;
+$color-yellow:      #f7db50; // название цвета на htmlcsscolor.com - energy yellow (alternative #fbc523 - turbo)
+$color-logo-1:      #136db7;
+$color-logo-2:      #12a3d6;
+
+$color-primary: $color-denim;
+$color-warning: $color-ecstasy;
+$color-danger:  $color-valencia;
+$color-info:    $color-blue;
+$color-success: $color-apple;
+$color-mute:    $color-raven;
+$color-text:    $color-charcoal;
+$color-line:    $color-cadetGray;
+
+$color-text-primary: darken($color-primary, 5%);
+$color-text-warning: darken($color-warning, 5%);
+$color-text-danger:  darken($color-danger, 5%);
+$color-text-info:    darken($color-info, 5%);
+$color-text-success: darken($color-success, 4%);
+$color-text-mute:    darken($color-cadetGray, 5%);
+

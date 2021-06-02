@@ -1,0 +1,17 @@
+.product-fade-enter {
+    opacity: 0.01;
+}
+.product-fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-out;
+}
+.product-fade-exit {
+    opacity: 1;
+    transform: scale3d(1,1,1);
+}
+.product-fade-exit-active {
+    opacity: 0.01;
+    height: 0;
+    transform: scale3d(0,0,1);
+    transition: opacity 500ms ease-out, height 300ms ease-out 200ms, transform 500ms ease-out;
+}

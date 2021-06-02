@@ -1,0 +1,148 @@
+@import "~scss/config";
+
+.top-image {
+    position: relative;
+    background-color: #cccbcc;
+    background-image: url('images/startpage/zima30/main_bg_lg.png');
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 500px;
+    width: 100%;
+    @include media(lg) {
+        background-image: url('images/startpage/zima30/main_bg_md.png');
+        height: 400px;
+    }
+    @include media(ipad) {
+        background-image: url('images/startpage/zima30/main_bg_ipad.jpg');
+        height: 400px;
+    }
+    @include media(sm) {
+        background-image: url('images/startpage/zima30/main_bg_xs.png');
+        height: 600px;
+        background-position-y: 33%;
+    }
+    @include media(xs) {
+        height: 450px;
+    }
+    &-block {
+        position: absolute;
+        top: 10%;
+        left: 55%;
+        right: 20px;
+        font-size: 21px;
+        text-transform: uppercase;
+        text-align: left;
+        @include media(lg) {
+            top: 12%;
+            left: 58%;
+        }
+        @include media(sm) {
+            left: 20px;
+            top: 20px;
+            text-align: center;
+        }
+    }
+    &-header {
+        color: #006d67;
+        font-size: 60px;
+        line-height: 1em;
+        margin-bottom: 15px;
+        max-width: 300px;
+        @include media(lg) {
+            font-size: 48px;
+        }
+        @include media(sm) {
+            max-width: none;
+        }
+        @include media(xs) {
+            font-size: 36px;
+        }
+    }
+    &-text {
+        @mixin textStyle() {
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1em;
+        }
+        &1 {
+            @include textStyle();
+            color: #e45a48;
+            font-size: 48px;
+            font-weight: 600;
+            margin-left: -3px;
+            @include media(lg) {
+                font-size: 36px;
+            }
+        }
+        &2 {
+            @include textStyle();
+            font-weight: 200;
+            font-size: 16px;
+
+            @include media(lg) {
+                font-size: 15px;
+            }
+            @include media(sm) {
+                background-color: rgba($color-white, .33);
+                display: table;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 1px 10px;
+            }
+        }
+        &3 {
+            @include textStyle();
+            font-weight: 600;
+            color: #006d67;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            @include media(lg) {
+                margin-top: 20px;
+            }
+            @include media(sm) {
+                background-color: rgba($color-white, .33);
+                display: table;
+                margin: 15px auto 0;
+                padding: 5px 10px 10px;
+            }
+        }
+        &4 {
+            @include textStyle();
+            font-weight: 200;
+            margin-bottom: 20px;
+            @include media(lg) {
+                font-size: 18px
+            }
+            @include media(md) {
+                margin-bottom: 0;
+            }
+            @include media(sm) {
+                background-color: rgba($color-white, .33);
+                display: table;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px;
+                padding: 1px 10px;
+            }
+        }
+    }
+    &-btn {
+        font-size: 21px;
+        margin-top: 15px;
+        height: 50px;
+        padding: 0 20px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+        background: rgba(228,91,71,.9);
+        color: #fff;
+        border: none;
+        box-shadow: none;
+        &:hover{
+            background: rgba(228,91,71,1);
+        }
+        &:active{
+            background: rgba(206,76,58, 1);
+        }
+    }
+}

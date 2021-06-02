@@ -1,0 +1,100 @@
+@import "~scss/config";
+
+$footerFontSize: $footer-font-size; // Размер текста
+$footerFontWeight: $footer-font-weight; // Толщина текста
+$footerPadding: $footer-padding; // padding кнопки
+$footerBg: $footer-bg; // Цвет фона
+$footerBaseColor: $footer-base-color; // Цвет по-умолчанию
+$footerColor: $footer-color; // Цвет пункта меню
+$footerLinkColor: $footer-link-color; // Цвет ссылки пункта меню
+$footerColorActive: $footer-color-active; // Цвет активной ссылки (подсвечен текущий раздел)
+$footerColorHover: $footer-color-hover; // Цвет при выборе-наведении
+$footerLinkDecorationColor: $footer-link-decoration-color; // Цвет при выборе-наведении
+$footerLinkDecorationColorHover: $footer-link-decoration-color-hover; // Цвет при выборе-наведении
+
+.footer {
+    padding: $main-padding*2 0;
+    background: $footerBg;
+    color: $footerBaseColor;
+    &-inner {
+        composes: section from global;
+    }
+    &-wrap {
+        composes: grid from global;
+    }
+    &-column {
+        composes: grid-item from global;
+        width: 33.3%;
+        @include media(md){
+            margin-bottom: 5px;
+        }
+        &-left {
+            @extend .footer-column;
+            @include media(md){
+                width: 66.6%;
+            }
+            @include media(sm){
+                width: 100%;
+            }
+        }
+        &-center {
+            @extend .footer-column;
+            @include media(md){
+                width: 33.3%;
+            }
+            @include media(sm){
+                width: 100%;
+            }
+        }
+        &-right {
+            @extend .footer-column;
+            @include media(md){
+                width: 100%;
+            }
+        }
+    }
+    &-bottom {
+        margin-top: $main-padding;
+        padding: $main-padding $main-padding $main-padding*2;
+        border-top: 1px solid $footerBaseColor;
+        text-align: center;
+    }
+}
+
+.menu-item {
+    @include footer-menu-item();
+    &.big {
+        padding: $footer-padding/2 0;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1em;
+        border-left: none;
+        margin-top: 5px;
+    }
+}
+
+.link {
+    @include footer-menu-item-link();
+    &.big {
+        font-weight: 400;
+        color: $footerLinkColor;
+        //text-transform: none;
+        margin-top: 5px;
+        &:hover{
+            color: $footer-color-hover;
+        }
+    }
+}
+
+.social{
+    margin: 5px 0;
+    &-btn{
+        margin: 10px;
+        fill: $color-cadetGray;
+        transition: fill .12s ease-out;
+        &:hover{
+            fill: $footer-color-hover;
+        }
+    }
+}

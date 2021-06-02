@@ -1,0 +1,121 @@
+@keyframes loader {
+    0% {transform: translateZ(0) scale(.5); opacity: 0 }
+    100% {transform: translateZ(0) scale(1); opacity: 1 }
+}
+@keyframes loader2 {
+    0% {transform: translateZ(0)  scale(1)}
+    50% {transform:  translateZ(0) scale(.92)}
+    100% {transform:  translateZ(0) scale(1)}
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    position: fixed;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #3d4c62;
+    font-family: "Gilroy",-apple-system,"Helvetica Neue",sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+small {
+    font-size: 14px;
+}
+
+img {
+    max-width: 100%;
+}
+
+::selection {
+    background: rgba(152,227,248,0.6);
+}
+:focus {
+    outline: none;
+}
+
+/*#spa-top{
+    position: fixed;
+}*/
+
+#spa > .loaderWrap {
+    top: 50%;
+    left: 0;
+    right: 0;
+    position: fixed;
+    margin-top: -100px;
+}
+
+#spa > .loaderWrap .loader {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#spa > .loaderWrap .loaderSvg {
+    padding: 0 30px;
+    width: 100%;
+    transform: translateZ(0) scale(0);
+    animation: loader .7s ease-out forwards , loader2 3s ease-in-out infinite .7s;
+}
+
+#spa > .loaderWrap .cls-1 {
+    fill: #1170be;
+}
+
+#spa > .loaderWrap .cls-2 {
+    fill: #12a3d6;
+}
+
+#spa > .loaderWrap .loaderText {
+    text-align: center;
+    color: #1170be;
+    font-family: monospace, apple-system;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 33px;
+}
+#spa > .loaderFooter {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    color: #6e7a8e;
+    font-family: monospace, apple-system;
+}
+#spa > .iFrameLoader {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,.5);
+    padding: 10px;
+    font-size: 16px;
+    color: #6e7a8e;
+    font-family: monospace, apple-system;
+    transition: opacity .5s ease-out;
+}
+
+@media (min-width:320px)  { #spa > .loaderFooter {font-size: 6px;} }
+@media (min-width:481px)  { #spa > .loaderFooter {font-size: 7px;} }
+@media (min-width:641px)  { #spa > .loaderFooter {font-size: 8px;} }
+@media (min-width:961px)  { #spa > .loaderFooter {font-size: 12px;} }

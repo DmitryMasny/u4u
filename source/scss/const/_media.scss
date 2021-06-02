@@ -1,0 +1,94 @@
+//==== МЕДИА ===
+$media-xs: 576px;   //Смартфоны
+$media-sm: 768px;   //Планшеты
+$media-md: 992px;   //Нетбуки
+$media-lg: 1240px;  //Ноутбуки
+$media-xl: 1480px;  //big-size
+$media-hsm: 800px;  //Маленькая высота
+$media-iphone5: 370px;  //iphone5 - ширина (верт.)
+
+@mixin media($media) {
+    @if $media == xs {
+        @media only screen and (max-width: $media-xs - 1) {
+            @content;
+        }
+    } @else if $media == sm {
+        @media only screen and (max-width: $media-sm - 1) {
+            @content;
+        }
+    } @else if $media == md {
+        @media only screen and (max-width: $media-md - 1) {
+            @content;
+        }
+    } @else if $media == lg {
+        @media only screen and (max-width: $media-lg - 1) {
+            @content;
+        }
+    } @else if $media == xl {
+        @media only screen and (max-width: $media-xl - 1) {
+            @content;
+        }
+    } @else if $media == notsm {
+        @media only screen and (min-width: $media-sm) {
+            @content;
+        }
+    }
+
+    @else if $media == iPhone5 {
+        @media only screen and (max-width: $media-iphone5 - 1) {
+            @content;
+        }
+    }
+
+    // ниже LEGASY Media queries по высоте (пока могут не использоваться)
+
+    //@else if $media == hsm {
+    //    @media only screen and (max-height: $media-hsm - 1) {
+    //        @content;
+    //    }
+    //}
+    //// Media queries для iPad
+    //@else if $media == ipad {
+    //    @media only screen
+    //    and (min-device-width: 768px)
+    //    and (max-device-width: 1024px)
+    //    and (-webkit-min-device-pixel-ratio: 2) {
+    //        @content;
+    //    }
+    //} @else if $media == ipadLandscape {
+    //    @media only screen
+    //    and (min-device-width: 768px)
+    //    and (max-device-width: 1024px)
+    //    and (orientation: portrait)
+    //    and (-webkit-min-device-pixel-ratio: 2) {
+    //        @content;
+    //    }
+    //} @else if $media == ipadPortrait {
+    //    @media only screen
+    //    and (min-device-width: 768px)
+    //    and (max-device-width: 1024px)
+    //    and (orientation: portrait)
+    //    and (-webkit-min-device-pixel-ratio: 2) {
+    //        @content;
+    //    }
+    //}
+}
+@mixin orientation($media) {
+    @if $media == landscape {
+        @media only screen
+        //and (max-width: $media-sm - 1)
+        and (orientation: landscape)
+        and (-webkit-min-device-pixel-ratio: 2)
+        {
+            @content;
+        }
+    } @else if $media == portrait {
+        @media only screen
+        //and (max-width: $media-sm - 1)
+        and (orientation: portrait)
+        and (-webkit-min-device-pixel-ratio: 2)
+        {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+//=== ШАПКА ===
+$header-top-height: 60px;
+$header-top-height-sm: 50px;
+$header-bottom-height: 40px;
+
+/*
+ *  Параметры
+ */
+$main-menu-height: $header-bottom-height;               // Высота панели меню
+$main-menu-font-size: 18px;                             // Размер текста
+$main-menu-font-weight: 600;                            // Толщина текста
+$main-menu-margin: 5px;                                 // Расстояние между кнопками
+$main-menu-padding: $main-padding;                      // padding кнопки
+$main-menu-color: $color-charcoal;                      // Цвет текста
+$main-menu-color-active: darken($color-ecstasy, 5%);    // Цвет активной кнопки (подсвечена текущий раздел)
+$main-menu-color-hover: darken($color-denim, 5%);       // Цвет при выборе-наведении
+$main-menu-bg: $color-white;                            // Цвет фона выпадающего меню
+$main-menu-dropdown-maxw: 320px;                        // Ширина выпадающего меню
+$main-menu-dropdown-font-weight: 400;                   // Толщина текста выпадающего меню
+$main-menu-dropdown-font-size: 14px;                    // Размер текста выпадающего меню
+$main-menu-dropdown-line-height: 1em;                   // Line-height выпадающего меню

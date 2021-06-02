@@ -1,0 +1,31 @@
+@import "~scss/config";
+
+.order-delivery-info-modal {
+    text-align: center;
+    .logo{
+        display: inline-block;
+        width: 125px;
+        height: 125px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .order-number {
+        font-size: 21px;
+        color: $color-text-info;
+        margin: 10px 0 $main-margin-bottom;
+    }
+    .address {
+        border-bottom: 2px dotted $color-line;
+        line-height: 1.4em;
+        font-weight: bold;
+        &:hover{
+            //color: $color-text-info;
+            border-bottom: none;
+        }
+    }
+    .address2 {
+        line-height: 1.4em;
+        font-weight: bold;
+    }
+}

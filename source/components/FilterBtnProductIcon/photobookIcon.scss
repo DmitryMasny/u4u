@@ -1,0 +1,42 @@
+@import '~scss/config';
+
+.photobook-icon{
+    display: block;
+    fill: none;
+    &-book{
+        &-back{
+            fill: $color-athensGray;
+        }
+        &-line{
+            stroke: $color-raven;
+        }
+    }
+    &-glue{
+        stroke-width: 1;
+        stroke: $color-nepal;
+    }
+    &.active {
+        .photobook-icon{
+            &-book-line{
+                stroke: $color-warning;
+            }
+            &-glue{
+                stroke: rgba($color-warning,.8);
+            }
+        }
+    }
+    &.disabled {
+        cursor: default;
+        .photobook-icon{
+            &-back{
+                fill: none;
+            }
+            &-book-line{
+                stroke: rgba($color-raven,.4);
+            }
+            &-glue{
+                stroke: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,188 @@
+@import "~scss/config";
+
+.library {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 0 -3px;
+    width: 100%;
+    transition: opacity $animation-duration-medium ease-out .2s;
+    &.disabled {
+        pointer-events: none;
+        opacity: .8;
+    }
+    &.selectable > .photo {
+        cursor: pointer;
+        .photo-selection-box {
+            opacity: .8;
+        }
+        .photo-image {
+            opacity: .8;
+        }
+        @include media(notsm){
+            &:hover {
+                outline-color: $color-line;
+                opacity: 1;
+                .photo-selection-box {
+                    opacity: 1;
+                }
+            }
+        }
+        &.selected {
+            outline-color: $color-primary;
+            .photo-selection-box {
+                background: $color-primary;
+                border-color: $color-primary;
+            }
+            .photo-image {
+                opacity: 1;
+            }
+        }
+        &.disabled {
+            .photo-image {
+                opacity: .5;
+            }
+        }
+    }
+    .photo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+        max-width: 500px;
+        margin: 0 3px 6px;
+        user-select: none;
+        outline: 2px solid transparent;
+        transition: outline-color $animation-duration-fast ease-out, opacity $animation-duration-medium ease-out;
+        @include media(notsm){
+            &:hover {
+                opacity: .9;
+                .photo-selection-box {
+                    opacity: 1;
+                    pointer-events: auto;
+                    @include media(xs) {
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                }
+                .resolution {
+                    opacity: 1;
+                }
+                .photo-preview-box {
+                    opacity: .8;
+                    pointer-events: auto;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                .photo-import-box {
+                    opacity: .8;
+                    //pointer-events: auto;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        //padding: 1px;
+        //box-shadow: inset 1px 1px 2px #f00;
+        //-webkit-user-drag: none;
+        @include media(xs) {
+            max-width: 300px;
+            height: 74px;
+        }
+        &.disabled {
+            pointer-events: none;
+            .photo-image {
+                opacity: .5;
+                filter: grayscale(.5) blur(1px);
+            }
+        }
+        &-image {
+            //border: 1px solid $color-line;
+            height: 100%;
+        }
+        &-selection-box {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 5px;
+            left: 10px;
+            border-radius: 12px;
+            border: 2px solid $color-white;
+            background-color: rgba($color-black, .1);
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            font-size: 0;
+            transition: opacity $animation-duration-fast ease-out;
+            @include media(xs) {
+                width: 16px;
+                height: 16px;
+                left: 5px;
+                border-radius: 8px;
+            }
+            & > svg {
+                fill: #fff;
+                margin: -2px 0 0 -2px;
+                @include media(xs) {
+                    font-size: 12px !important;
+                    margin: 0;
+                }
+            }
+        }
+        .resolution{
+            position: absolute;
+            bottom: 5px;
+            left: 10px;
+            border-radius: 2px;
+            font-size: 10px;
+            color: #fff;
+            background-color: rgba($color-black, .3);
+            padding: 2px 4px;
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+        &-preview-box {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            bottom: 5px;
+            right: 10px;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            font-size: 0;
+            fill: #fff;
+            background-color: rgba($color-black, .2);
+            border-radius: 4px;
+            transition: opacity $animation-duration-medium ease-out;
+            @include media(xs) {
+                width: 16px;
+                height: 16px;
+                right: 5px;
+            }
+        }
+        &-import-box {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            bottom: 8px;
+            left: 10px;
+            //pointer-events: none;
+            font-size: 0;
+            fill: #fff;
+            opacity: 0;
+            transition: opacity $animation-duration-medium ease-out;
+            @include media(xs) {
+                right: 5px;
+                bottom: 5px;
+            }
+        }
+    }
+    .spinner {
+        margin-top: 50px;
+    }
+}

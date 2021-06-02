@@ -1,0 +1,129 @@
+@import "~scss/config";
+
+/*
+ *  Пользовательское меню хедера
+ */
+.header-menu {
+    display: flex;
+    margin: 0 -10px;
+    align-items: center;
+    &.top-menu {
+        margin: 0 20px 0 0;
+    }
+    &.profile-menu {
+        background-color: $color-athensGray;
+        padding: 2px 0 2px 10px;
+        border-radius: 20px;
+        .menu-item {
+            font-weight: normal;
+            //margin-top: -1px;
+        }
+        @include media(sm){
+            background-color: transparent;
+        }
+    }
+    .menu{
+        &-profile{
+            &-btn{
+                display: flex;
+                align-items: center;
+
+            }
+            &-avatar{
+            }
+            &-login{
+                padding-left: $main-padding;
+            }
+            &-icon{
+                margin-right: -5px;
+            }
+        }
+        &-item {
+            @include header-menu-item-link();
+            &:hover .cart{
+                background-color: $color-primary;
+                fill: $color-white;
+            }
+            &.active{
+                color: $color-text-warning;
+                cursor: default;
+                & .cart{
+                    background-color: $color-warning;
+                    fill: $color-white;
+                    .cart-quantity {
+                        display: none;
+                    }
+                }
+            }
+            &.header-link:after{
+                @include media(xs){
+                    content: 'A';
+                }
+            }
+            &-sm{
+                @include media(xs){
+                    display: none;
+                }
+            }
+        }
+    }
+
+    /* Значок корзины */
+    .cart {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: $color-athensGray;
+        fill: $color-nepal;
+        margin: 0 -10px;
+        &-quantity {
+            $qSize: 15px;
+            $brWidth: 2px;
+            position: absolute;
+            top: 0 - $brWidth;
+            right: -5px - $brWidth;
+            height: $qSize + $brWidth*2;
+            width: $qSize + $brWidth*2;
+            border: $brWidth solid #fff;
+            border-radius: 50%;
+            background-color: $color-warning;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            line-height: $qSize;
+        }
+    }
+}
+
+/*
+ *  Пользовательское меню в футере
+ */
+.footer-menu {
+    .menu-item {
+        @include footer-menu-item-link();
+    }
+}
+
+.menu-profile-mob{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    &-item{
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 0 20px;
+        color: $color-text;
+        &:hover{
+            color: $color-text-primary;
+        }
+        &.active{
+            color: $color-text-warning;
+        }
+    }
+}

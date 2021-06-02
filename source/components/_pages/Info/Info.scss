@@ -1,0 +1,108 @@
+@import "~scss/config";
+
+.info-page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 24px;
+    margin-top: 15px;
+    &-item {
+        margin-bottom: $main-margin-bottom;
+    }
+}
+
+.about {
+    //font-size: 16px;
+    //font-weight: bold;
+    //@include media(sm) {
+    //    font-size: 14px;
+    //}
+    //&-title {
+    //    font-size: 2em;
+    //    font-weight: bold;
+    //    &-accent {
+    //        color: $color-text-primary;
+    //    }
+    //}
+    //&-header {
+    //    font-size: 2em;
+    //    font-weight: bold;
+    //    text-transform: uppercase;
+    //    color: $color-text-primary;
+    //}
+    //&-advantages {
+    //    .about-header {
+    //        color: $color-text-warning;
+    //    }
+    //}
+    //&-adv-list {
+    //    font-size: 1.5em;
+    //    padding-left: 2em;
+    //    margin-top: 0;
+    //    color: $color-text-warning;
+    //    list-style: none;
+    //    counter-reset: li;
+    //    &-item {
+    //        color: $color-text;
+    //        margin-bottom: 1em;
+    //        line-height: 1em;
+    //        &:before {
+    //            content: counter(li, decimal-leading-zero) " ";
+    //            counter-increment: li;
+    //            //color: $color-text-warning;
+    //            font-size: 1em;
+    //            display: inline-block;
+    //            width: 1em;
+    //            margin-left: -1.75em;
+    //            margin-right: .75em;
+    //            text-align: right;
+    //            direction: rtl;
+    //        }
+    //    }
+    //}
+    &-link {
+        color: $color-text-primary;
+        fill: $color-text-primary;
+        font-size: 24px;
+    }
+}
+
+.contacts {
+    font-size: 18px;
+    margin-bottom: $main-margin-bottom*2;
+}
+
+.delivery {
+    &-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        .delivery-block{
+            width: 50%;
+            &:first-child{
+                padding-right: 60px;
+            }
+            @include media(md){
+                width: 100%;
+                &:first-child{
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    .danger{
+        color: $color-text-danger;
+    }
+}
+
+.showWidgetBtn {
+    height: 80px;
+    width: 80%;
+    margin: 20px auto;
+
+    @include media(md){
+        width: 350px;
+        max-width: 100%;
+        height: 50px;
+        margin: 10px;
+    }
+}

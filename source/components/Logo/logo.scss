@@ -1,0 +1,155 @@
+@import "~scss/config";
+
+.logo {
+    width: 100%;
+
+    &-color1 {
+        fill: $logo-color-1;
+    }
+
+    &-color2 {
+        fill: $logo-color-2;
+    }
+
+    &:hover {
+        opacity: .85;
+    }
+}
+
+.logony {
+    width:100%;
+    //@media screen and (max-width: 770px) {
+    //    margin: -5px -12px -5px -12px;
+    //}
+}
+
+.cls-1 {
+    fill: #c13355;
+}
+
+.cls-2 {
+    fill: #e24076;
+}
+
+.cls-3 {
+    fill: #2f7057;
+}
+
+.cls-4 {
+    fill: #7ac943;
+}
+
+.cls-5 {
+    fill: #009245;
+}
+
+.cls-6 {
+    fill: #d9fabe;
+}
+
+.cls-7 {
+    fill: #221a1b;
+}
+
+/*
+.cls-1,
+.cls-7 {
+    fill: #6c9c00;
+}
+
+.cls-14,
+.cls-17,
+.cls-18,
+.cls-2 {
+    fill: none;
+}
+
+.cls-2 {
+    stroke: #db2e39;
+}
+
+.cls-14,
+.cls-15,
+.cls-16,
+.cls-17,
+.cls-18,
+.cls-2 {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cls-14,
+.cls-17,
+.cls-2 {
+    stroke-width: 4px;
+}
+
+.cls-16,
+.cls-3 {
+    fill: #8f448f;
+}
+
+.cls-4 {
+    fill: #7ea81f;
+}
+
+.cls-5 {
+    fill: #3a9b35;
+}
+
+.cls-15,
+.cls-6 {
+    fill: #d40613;
+}
+
+.cls-7 {
+    font-size: 37.13px;
+    font-family: Gilroy-ExtraBold, Gilroy;
+    font-weight: 800;
+}
+
+.cls-8 {
+    letter-spacing: -0.02em;
+}
+
+.cls-9 {
+    letter-spacing: -0.04em;
+}
+
+.cls-10 {
+    letter-spacing: -0.07em;
+}
+
+.cls-11 {
+    letter-spacing: -0.05em;
+}
+
+.cls-12 {
+    letter-spacing: -0.06em;
+}
+
+.cls-13 {
+    fill: #65b161;
+}
+
+.cls-14 {
+    stroke: #8f448f;
+}
+
+.cls-15 {
+    stroke: #d40815;
+}
+
+.cls-16 {
+    stroke: #802a80;
+}
+
+.cls-17,
+.cls-18 {
+    stroke: #65b161;
+}
+
+.cls-18 {
+    stroke-width: 3px;
+}
+*/

@@ -1,0 +1,97 @@
+@import "~scss/config";
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    &-item {
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        &.divider {
+            flex-grow: 1;
+            display: inline-flex;
+            justify-content: flex-end;
+            margin-right: 15px;
+        }
+    }
+    &-btn {
+        min-width: 90px;
+    }
+    .count {
+        color: $color-raven;
+        margin-right: 30px;
+        &.animated{
+            animation: footer-text-progress-animation 2s linear infinite;
+        }
+        &.error {
+            color: $color-text-danger;
+        }
+    }
+}
+
+.visitor-progress {
+    margin-top: -10px;
+    height: 10px;
+    width: 100%;
+    background-color: $color-lavenderMist;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: opacity $animation-duration-fast ease-out;
+    opacity: 0;
+    &.show {
+        opacity: 1;
+    }
+    &-inner {
+        position: relative;
+        width: 0;
+        height: 10px;
+        background-color: $color-primary;
+        border-radius: 4px 0 0 4px;
+        transition: width $animation-duration-slow ease-in-out;
+        box-shadow:
+                inset 0 1px 5px rgba(255, 255, 255, 0.1),
+                inset 0 -1px 6px rgba(0, 0, 0, 0.2);
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                            -45deg,
+                            rgba(255, 255, 255, .2) 25%,
+                            transparent 25%,
+                            transparent 50%,
+                            rgba(255, 255, 255, .2) 50%,
+                            rgba(255, 255, 255, .2) 75%,
+                            transparent 75%,
+                            transparent
+            );
+            z-index: 1;
+            background-size: 50px 50px;
+            animation: visitor-progress-animation 2s linear infinite;
+        }
+    }
+}
+@-webkit-keyframes visitor-progress-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+@-webkit-keyframes footer-text-progress-animation {
+    0% {
+        color: $color-raven;
+    }
+    50% {
+        color: $color-primary;
+    }
+    100% {
+        color: $color-raven;
+    }
+}

@@ -1,0 +1,23 @@
+@import "~scss/config";
+.loader-wrap{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+}
+.prev-image {
+    top:0;
+    right:0;
+    bottom:0;
+    transform: translate(0, 0);
+    //height: 100%; //TODO: опционально, например в миниатюрах фото редактора надо, а в превью мои фотографии - нет!
+    //max-height: 100%;
+    // с max-height: 100% не отображаются фоны в темах, без него - вертикальные иконки стикерпаков выходят за берега
+    &.abs {
+        position: absolute;
+        width: 100%;
+    }
+}

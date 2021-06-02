@@ -1,0 +1,122 @@
+@import "~scss/config";
+
+.auth-form {
+    &-link {
+        color: $main-color-link;
+        cursor: pointer;
+        &:hover {
+            color: $main-color-link-hover;
+            text-decoration: underline;
+        }
+    }
+    &-bottom-text {
+        border-top: 1px solid $color-cadetGray;
+        margin-top: $main-margin;
+        padding-top: $main-padding * 2;
+        //&-bottom {
+        //    border-top: 1px solid $color-cadetGray;
+        //    margin-top: 20px;
+        //}
+    }
+    &-info {
+        font-size: 14px;
+        margin-top: $main-margin-bottom;
+    }
+    &-btn {
+        //@include btn-bluegray();
+        &-main {
+            margin-bottom: $main-margin-bottom;
+        }
+    }
+    &-icon {
+        position: relative;
+        margin: $main-padding auto ($main-margin-bottom + $main-padding);
+        width: 100%;
+        text-align: center;
+        &:before {
+            $m: 10px;
+            display: block;
+            content: "";
+            position: absolute;
+            width: 120px + $m*2;
+            height: 120px + $m*2;
+            top: 0 - $m;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background-color: rgba(lighten($color-info, 5%), .15);
+            border-radius: 50%;
+        }
+    }
+    .title {
+        font-size: 18px;
+        margin-bottom: $main-margin-bottom;
+
+    }
+    .last {
+        margin-bottom: 0;
+    }
+    .show-pwd-icon {
+        margin: -8px;
+        cursor: pointer;
+    }
+}
+
+.fullWidth {
+    width: 100%
+}
+
+.pwd-help, .space-between-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.pwd-help {
+    margin-bottom: $main-margin-bottom;
+    @include media(xs){
+        flex-direction: column;
+        font-size: 15px;
+    }
+}
+
+.social {
+    $size: 40px;
+    &-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: $main-padding*2;
+    }
+    &-header {
+        text-align: center;
+        padding: 0 0 $main-padding;
+    }
+    &-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 $main-padding;
+        width: $size;
+        height: $size;
+        border-radius: $size/2;
+        //background-color: #91b4dc;
+        fill: $color-white;
+        cursor: pointer;
+        transition: background-color $animation-duration-fast ease-out;
+        &:hover {
+            opacity: .8;
+        }
+        &-vk {
+            background-color: #4a76a8;
+        }
+        &-fb {
+            background-color: #3b559f;
+        }
+        &-inst {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+        }
+        &-google {
+            background-color: #d94a41;
+        }
+    }
+}

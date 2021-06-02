@@ -1,0 +1,84 @@
+@import "~scss/config";
+
+@mixin icon() {
+    font-size: $main-icon-size;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+}
+
+.icon {
+    @include icon();
+    &.primary {
+        fill: $color-text-primary;
+    }
+    &.warning {
+        fill: $color-text-warning;
+    }
+    &.danger {
+        fill: $color-text-danger;
+    }
+    &.success {
+        fill: $color-text-success;
+    }
+    &.info {
+        fill: $color-text-info;
+    }
+    &.mute {
+        fill: $color-mute;
+    }
+}
+
+.lineIcon {
+    @include icon();
+    fill: none;
+    stroke: $color-text;
+    overflow: visible;
+    .shift {
+        transform: translate(7%, 7%);
+        stroke: rgba(lighten($color-info, 5%), .7)
+    }
+    &.primary {
+        stroke: $color-primary;
+        .shift {
+            fill: rgba(lighten($color-primary, 5%), .15)
+        }
+    }
+    &.warning {
+        stroke: $color-warning;
+        .shift {
+            fill: rgba(lighten($color-warning, 5%), .15)
+        }
+    }
+    &.danger {
+        stroke: $color-danger;
+        .shift {
+            fill: rgba(lighten($color-danger, 5%), .15)
+        }
+    }
+    &.success {
+        stroke: $color-success;
+        .shift {
+            fill: rgba(lighten($color-success, 5%), .15)
+        }
+    }
+    &.info {
+        stroke: $color-info;
+        .shift {
+            fill: rgba(lighten($color-info, 5%), .15)
+        }
+    }
+    &.mute {
+        stroke: $color-mute;
+        .shift {
+            fill: rgba(lighten($color-mute, 5%), .15)
+        }
+    }
+}
+
+//Модификация иконки для вставки в Blueprint input
+.bp3mode{
+    position: absolute;
+    margin: 8px;
+    z-index: 5;
+}

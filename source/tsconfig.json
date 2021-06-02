@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es6",
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom",
+      "es2017.object"
+    ],
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "__TS": [
+        "./source/__TS/"
+      ]
+    }
+  },
+  "files": [
+    "./components/start.jsx"
+    //"./source/_components/*.tsx"
+    //"./src/index.tsx"
+  ]
+}

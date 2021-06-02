@@ -1,0 +1,25 @@
+@import "~scss/config";
+
+//.drag-wrap{
+//    display: inline-block;
+//}
+//.drag-preview{
+//    background-color: #fff;
+//  padding: 2px;
+//  border-radius: 2px;
+//  box-shadow: 1px 3px 9px rgba($color-black,.3);
+//}
+
+.drop-wrap{
+  width: 50%;
+  min-height: 100px;
+  border: 2px dashed $color-nepal;
+  &.active{
+    background-color: rgba($color-white, .3);
+    border: 2px solid $color-primary;
+  }
+  &.over{
+    background-color: rgba($color-white, .5);
+    border: 2px solid $color-warning;
+  }
+}

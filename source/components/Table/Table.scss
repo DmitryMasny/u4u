@@ -1,0 +1,107 @@
+@import "~scss/config";
+
+.table {
+    &-wrap{
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        margin-bottom: $main-margin-bottom;
+
+        //min-height: .01%;
+        //max-height: 77vh;
+        @include media(sm){
+            border-right: 1px dotted $color-nepal;
+        }
+        table {
+            margin-bottom: 0;
+            @include media(sm){
+                min-width: $media-md - $main-padding*4;
+            }
+            @include media(xs){
+                min-width: $media-sm - $main-padding*4;
+            }
+        }
+        &.large{
+            @include media(md){
+                border-right: 1px dotted $color-nepal;
+            }
+            table {
+                @include media(md){
+                    min-width: $media-lg - $main-padding*4;
+                }
+                @include media(xs){
+                    min-width: $media-md - $main-padding*4;
+                }
+            }
+        }
+        &.small{
+            border-right: inherit;
+            @include media(xs){
+                border-right: 1px dotted $color-nepal;
+            }
+            table {
+                min-width: inherit;
+                @include media(xs){
+                    min-width: $media-sm - $main-padding*4;
+                }
+            }
+        }
+    }
+    max-width: 100%;
+    margin-bottom: $main-margin-bottom;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid $color-lavenderMist;
+    @include media(xs){
+        font-size: 14px;
+        line-height: 1.1em;
+    }
+    &.fill {
+        width: 100%;
+    }
+    &.hover {
+        tbody tr:not(.empty-row):hover{
+            td,th {
+                background-color: rgba($color-info,.12);
+                transition: background-color $animation-duration-fast ease-out;
+            }
+        }
+    }
+    td,th {
+        padding: 10px 20px;
+        @include media(md){
+            padding: 5px 10px;
+        }
+        @include media(xs){
+            padding: 3px 5px;
+        }
+        &.empty-cell{
+            color: $color-nepal;
+            font-size: 14px;
+        }
+    }
+    thead {
+        th{
+            background-color: $color-info;
+            color: $color-white;
+            text-align: left;
+            padding: 15px 20px;
+            font-weight: bold;
+            @include media(md){
+                padding: 10px;
+            }
+        }
+    }
+    tbody {
+        td,th {
+            border-bottom: 1px solid $color-lavenderMist;
+        }
+    }
+    &-desc{
+        font-size: 15px;
+        color: $color-raven;
+        padding: 0 10px 10px ;
+        margin-bottom: $main-margin-bottom;
+    }
+}

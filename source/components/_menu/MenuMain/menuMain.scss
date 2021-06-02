@@ -1,0 +1,83 @@
+@import "~scss/config";
+
+/*
+ *  Главное меню хедера
+ */
+.main-menu {
+    width: 100%;
+    @include media(sm) {
+        display: none;
+    }
+    &-row {
+        display: flex;
+        margin: 0 $main-padding*-1;
+    }
+}
+
+// Кнопка меню
+.menu-item {
+    $main-menu-height: $header-bottom-height;               // Высота панели меню
+    $main-menu-font-size: 18px;                             // Размер текста
+    $main-menu-font-weight: 600;                            // Толщина текста
+    $main-menu-margin: 5px;                                 // Расстояние между кнопками
+    $main-menu-padding: $main-padding;                      // padding кнопки
+    $main-menu-color: $color-charcoal;                      // Цвет текста
+    $main-menu-color-active: darken($color-ecstasy, 5%);    // Цвет активной кнопки (подсвечена текущий раздел)
+    $main-menu-color-hover: darken($color-denim, 5%);       // Цвет при выборе-наведении
+    $main-menu-bg: $color-white;                            // Цвет фона выпадающего меню
+    $main-menu-dropdown-maxw: 320px;                        // Ширина выпадающего меню
+    $main-menu-dropdown-font-weight: 400;                   // Толщина текста выпадающего меню
+    $main-menu-dropdown-font-size: 14px;                    // Размер текста выпадающего меню
+    $main-menu-dropdown-line-height: 1em;                   // Line-height выпадающего меню
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: $main-menu-font-size;
+    font-weight: $main-menu-font-weight;
+    text-transform: uppercase;
+    line-height: $main-menu-height;
+    margin-left: $main-menu-margin;
+    padding: 0 $main-menu-padding;
+    color: $main-menu-color;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    text-decoration: none;
+    user-select: none;
+    transition: color .12s ease-out;
+    &:first-child {
+        margin-left: 0;
+    }
+    &:hover, &:active {
+        color:$main-menu-color-hover;
+    }
+    &.active {
+        color:$main-menu-color-active;
+        cursor: default;
+        text-decoration: none;
+    }
+    &.selected {
+        color:$main-menu-color-hover;
+    }
+
+    &-divider{
+        flex: 1 1 auto;
+    }
+    &-select{
+        margin-right: -5px;
+    }
+    @media (max-width: 895px) {
+        padding: 0 7px;
+    }
+    @media (max-width: 848px) {
+        padding: 0 5px;
+    }
+    @media (max-width: 848px) {
+        padding: 0 5px;
+    }
+    @media (max-width: 825px) {
+        font-size: 17px;
+    }
+    @media (max-width: 825px) {
+        font-size: 16px;
+    }
+}

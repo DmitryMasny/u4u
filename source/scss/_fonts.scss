@@ -1,0 +1,107 @@
+//==== ШРИФТЫ ===
+
+// Roboto
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto Light'), local('Roboto-Light'), url('fonts/roboto/robotolight.woff2') format('woff2'), url('fonts/roboto/robotolight.woff') format('woff'), url('fonts/roboto/robotolight.ttf') format('truetype');
+//    font-weight: 300;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url('fonts/roboto/robotolightitalic.woff2') format('woff2'), url('fonts/roboto/robotolightitalic.woff') format('woff'), url('fonts/roboto/robotolightitalic.ttf') format('truetype');
+//    font-weight: 300;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto'), local('Roboto-Regular'), url('fonts/roboto/roboto.woff2') format('woff2'), url('fonts/roboto/roboto.woff') format('woff'), url('fonts/roboto/roboto.ttf') format('truetype');
+//    font-weight: 400;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto Italic'), local('Roboto-Italic'), url('fonts/roboto/robotoitalic.woff2') format('woff2'), url('fonts/roboto/robotoitalic.woff') format('woff'), url('fonts/roboto/robotoitalic.ttf') format('truetype');
+//    font-weight: 400;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto Medium'), local('Roboto-Medium'), url('fonts/roboto/robotomedium.woff2') format('woff2'), url('fonts/roboto/robotomedium.woff') format('woff'), url('fonts/roboto/robotomedium.ttf') format('truetype');
+//    font-weight: 500;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url('fonts/roboto/robotomediumitalic.woff2') format('woff2'), url('fonts/roboto/robotomediumitalic.woff') format('woff'), url('fonts/roboto/robotomediumitalic.ttf') format('truetype');
+//    font-weight: 500;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto Bold'), local('Roboto-Bold'), url('fonts/roboto/robotobold.woff2') format('woff2'), url('fonts/roboto/robotobold.woff') format('woff'), url('fonts/roboto/robotobold.ttf') format('truetype');
+//    font-weight: 700;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url('fonts/roboto/robotobolditalic.woff2') format('woff2'), url('fonts/roboto/robotobolditalic.woff') format('woff'), url('fonts/roboto/robotobolditalic.ttf') format('truetype');
+//    font-weight: 700;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto Black'), local('Roboto-Black'), url('fonts/roboto/robotoblack.woff2') format('woff2'), url('fonts/roboto/robotoblack.woff') format('woff'), url('fonts/roboto/robotoblack.ttf') format('truetype');
+//    font-weight: 900;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'Roboto';
+//    src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url('fonts/roboto/robotoblackitalic.woff2') format('woff2'), url('fonts/roboto/robotoblackitalic.woff') format('woff'), url('fonts/roboto/robotoblackitalic.ttf') format('truetype');
+//    font-weight: 900;
+//    font-style: italic;
+//}
+
+//  Gilroy
+//@font-face {
+//    font-family: 'Gilroy';
+//    src: url('fonts/gilroy/gilroy.woff2') format('woff2'), url('fonts/gilroy/gilroy.woff') format('woff'), url('fonts/gilroy/gilroy.ttf') format('truetype');
+//    font-weight: 400;
+//    font-style: normal;
+//}
+//@font-face {
+//    font-family: 'Gilroy';
+//    src: url('fonts/gilroy/gilroy.woff2') format('woff2'), url('fonts/gilroy/gilroy.woff') format('woff'), url('fonts/gilroy/gilroy.ttf') format('truetype');
+//    font-weight: 400;
+//    font-style: normal;
+//}
+
+@font-face {
+    font-family: 'Gilroy';
+    src:  url('fonts/gilroy/gilroymedium.woff') format('woff'), url('fonts/gilroy/gilroy.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('fonts/gilroy/gilroy_light.woff') format('woff'), url('fonts/gilroy/gilroy_light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('fonts/gilroy/gilroysemibold.woff') format('woff'), url('fonts/gilroy/gilroy_bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

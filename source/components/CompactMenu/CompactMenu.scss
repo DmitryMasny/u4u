@@ -1,0 +1,38 @@
+@import "~scss/config";
+
+.compact-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    min-width: 120px;
+    &-item {
+        padding: 5px 20px;
+        font-size: 18px;
+        color: $color-text;
+        transition: color $animation-duration-fast ease-out;
+        user-select: none;
+        @include media(sm){
+            padding: 10px 15px;
+        }
+        @include media(xs){
+            font-size: 16px;
+            padding: 10px;
+        }
+        &:hover {
+            //color: darken($color-bluegray, 5%);
+            color: $color-text-primary;
+
+        }
+        &.active {
+            //color: $color-text-primary;
+            color: $color-text-warning;
+            cursor: default;
+        }
+
+    }
+    &-btn{
+        &.bordered {
+            border: 2px solid $color-charcoal;
+        }
+    }
+}

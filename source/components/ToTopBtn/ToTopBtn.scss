@@ -1,0 +1,63 @@
+@import "~scss/config";
+
+// Кнопка с выпадающим меню
+
+.to-top-btn {
+    display: flex;
+    z-index: 4;
+    position: fixed;
+    //bottom: 10px;
+    bottom: 60px;
+
+    right: 25px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: rgba($color-nepal,.33);
+    fill: $color-white;
+    cursor: pointer;
+    transition: background-color $animation-duration-fast ease-out, opacity $animation-duration-slow ease-out;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    &.show{
+        opacity: 1;
+        pointer-events: auto;
+    }
+    @include media(sm){
+        right: 20px;
+    }
+    @include media(xs){
+        height: 40px;
+        width: 40px;
+    }
+    @include media(iPhone5){
+        bottom: 60px;
+    }
+    &:hover {
+        background-color: rgba($color-info,.75);
+    }
+    &:active {
+        background-color: $color-info;
+    }
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+    &.small {
+        height: 40px;
+        width: 40px;
+        &-icon {
+            font-size: 36px !important;
+        }
+    }
+    &-icon {
+        font-size: 48px !important;
+        @include media(xs){
+            font-size: 36px !important;
+        }
+    }
+}
+

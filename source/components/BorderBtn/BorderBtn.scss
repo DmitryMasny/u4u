@@ -1,0 +1,113 @@
+@import "~scss/config";
+
+// Кнопка с выпадающим меню
+.border-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $color-text;
+    color: $color-text;
+    fill: $color-text;
+    height: 40px;
+    padding: 0 15px;
+    background-color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color $animation-duration-fast ease-out;
+    user-select: none;
+    &:hover:not([class*="intent-"]) {
+        background-color: $color-text;
+        color: $color-white;
+        fill: $color-white;
+    }
+    &:active:not([class*="intent-"]) {
+        border-top-color: darken($color-text,12%);
+        border-left-color: darken($color-text,10%);
+        background-color: darken($color-text,8%);
+        color: $color-cadetGray;
+    }
+    &.filled {
+        display: flex;
+        width: 100%;
+    }
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+    &.small {
+        height: 32px;
+        font-size: 15px;
+        padding: 0 8px;
+    }
+    &.large {
+        height: 50px;
+        padding: 0 20px;
+    }
+    &-icon {
+        margin-right: 5px;
+    }
+    &.intent{
+        &-info{
+            border-color: $color-info;
+            color: $color-text-info;
+            fill: $color-info;
+            &:hover {
+                background-color: rgba($color-info, .12);
+                color: darken($color-text-info,4%);
+            }
+            &:active {
+                background-color: rgba($color-info, .25);
+                color: darken($color-text-info,7%);
+                border-color: darken($color-info,3%);
+                fill: darken($color-info,3%);
+
+            }
+        }
+        &-success{
+            border-color: $color-success;
+            color: $color-text-success;
+            fill: $color-success;
+            &:hover {
+                background-color: rgba($color-success, .12);
+                color: darken($color-text-success,4%);
+            }
+            &:active {
+                background-color: rgba($color-success, .25);
+                color: darken($color-text-success,7%);
+                border-color: darken($color-success,3%);
+                fill: darken($color-success,3%);
+            }
+        }
+        &-warning{
+            border-color: $color-warning;
+            color: $color-text-warning;
+            fill: $color-warning;
+            &:hover {
+                background-color: rgba($color-warning, .12);
+                color: darken($color-text-warning,4%);
+            }
+            &:active {
+                background-color: rgba($color-warning, .25);
+                color: darken($color-text-warning,7%);
+                border-color: darken($color-warning,3%);
+                fill: darken($color-warning,3%);
+            }
+        }
+        &-danger{
+            border-color: $color-danger;
+            color: $color-text-danger;
+            fill: $color-danger;
+            &:hover {
+                background-color: rgba($color-danger, .12);
+                color: darken($color-text-danger,4%);
+            }
+            &:active {
+                background-color: rgba($color-danger, .25);
+                color: darken($color-text-danger,7%);
+                border-color: darken($color-danger,3%);
+                fill: darken($color-danger,3%);
+            }
+        }
+
+    }
+}

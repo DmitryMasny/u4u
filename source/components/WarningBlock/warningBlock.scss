@@ -1,0 +1,46 @@
+@import "~scss/config";
+
+.attention-wrapper {
+    padding: 0 30px;
+}
+.attention {
+    width: 100%;
+    max-width: 1280px;
+    margin: 20px auto 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 2px;
+    //border: 2px dashed #ff8100;
+    border: 2px dashed lighten($color-danger, 5%);
+    color: darken($color-warning, 5%);
+
+    font-size: 17px;
+    text-align: center;
+    max-width: 840px;
+
+    b {
+        font-weight: 800;
+        color: darken($color-warning, 5%);
+    }
+    &.danger{
+        border: 2px dashed lighten($color-danger, 5%);
+        b {
+            color: $color-danger;
+        }
+    }
+    &.md{
+        max-width: 1050px;
+    }
+    &_landing{
+        margin-bottom: 40px;
+    }
+}
+.green-color {
+    border: 2px dashed lighten($color-success, 5%);
+    color: darken($color-success, 5%);
+}
+
+.attention-green {
+    composes: attention;
+    composes: green-color;
+}

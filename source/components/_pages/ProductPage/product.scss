@@ -1,0 +1,393 @@
+@import '~scss/config';
+
+.product {
+    display: flex;
+
+    @include media(sm) {
+        flex-wrap: wrap;
+        margin: 0 0 $main-margin-bottom;
+    }
+    &-left {
+        width: 50%;
+        padding: 0 80px 0 70px;
+        margin-top: 10px;
+        align-items: center;
+        //height: 500px;
+
+        @include media(md) {
+            padding: 0 40px;
+        }
+        @include media(sm) {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: $main-margin;
+            padding: 0;
+            //height: 360px;
+        }
+        //@include media(xs) {
+        //    height: 480px;
+        //}
+    }
+    &-right {
+        width: 50%;
+        padding-left: 40px;
+        @include media(md) {
+            padding-left: 20px;
+        }
+        @include media(sm) {
+            padding-left: 0;
+            width: 100%;
+        }
+
+    }
+
+    /*
+        Левая часть с превью
+     */
+    &-preview {
+        position: relative;
+        max-width: 320px;
+        margin: 30px 0 30px;
+        @include media(sm) {
+            width: 50%;
+            padding-right: $main-padding;
+        }
+        @include media(xs) {
+            width: 100%;
+            padding: 0 $main-padding;
+            min-width: 280px;
+        }
+
+        &.theme-chosen{   // тема выбрана - меняем высоту с учетом кнопок
+            margin-bottom: 60px;
+        }
+        &-s1{   // фикс для 30x30
+        }
+        &-s2{   // фикс для 20x20
+        }
+        &-s3{   // фикс для 30x20
+            margin-top: 80px;
+        }
+        &-s4{   // фикс для 20x30
+            max-width: 218px;
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 200px;
+        }
+        &-thumb {
+            box-shadow: 3px 4px 20px rgba($color-black,.25);
+        }
+        &-wrap {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: $main-margin-bottom;
+        }
+
+        .album{
+            // Название выбранной темы
+            &-title {
+                position: absolute;
+                bottom: -30px;
+                font-size: 16px;
+                font-weight: bold;
+                height: 1em;
+            }
+            // Кнопка выбора другой темы
+            //&-change-block {
+            //    position: absolute;
+            //    bottom: -40px;
+            //    min-width: 30px;
+            //    height: 30px;
+            //    padding: 0 7px;
+            //    left: 0;
+            //    right: 0;
+            //    display: inline-flex;
+            //    flex-direction: row;
+            //    align-items: center;
+            //    justify-content: center;
+            //    border: none;
+            //    border-radius: 2px;
+            //    cursor: pointer;
+            //    text-align: left;
+            //    font-size: 16px;
+            //    user-select: none;
+            //    background-color: $color-athensGray;
+            //    color: $color-text;
+            //    @include media(sm) {
+            //        right: $main-padding;
+            //    }
+            //    &:hover{
+            //        background-color: $color-lavenderMist;
+            //    }
+            //}
+        }
+    }
+    // Краткая информация выбранного переплета
+    &-status {
+        width: 100%;
+        margin-top: 20px;
+        //padding: 20px 10% 0;
+        @include media(sm) {
+            width: 50%;
+            padding-left: $main-padding;
+            margin-top: 50px;
+        }
+        @include media(xs) {
+            width: 100%;
+            padding: 0 $main-padding;
+            margin-top: 20px;
+        }
+        //font-size: 14px;
+        &-item {
+            display: block;
+            margin-bottom: 3px;
+            &.productionTime {
+                color: $color-text-info;
+                margin-top: 10px;
+            }
+        }
+        &-label {
+            color: $color-raven;
+        }
+        &-value {
+        }
+    }
+
+    /*
+        Правая часть с выбором опций
+     */
+    // Подзаголовки - тип переплета, формат, стоимость...
+    &-title {
+        font-size: 18px;
+        margin-bottom: $main-padding;
+        text-transform: uppercase;
+        font-weight: 600;
+
+        &:not(:first-child) {
+            margin-top: $main-margin;
+        }
+    }
+    // Диапазон страниц для выбранного переплета
+    &-pages-need {
+        margin-top:10px;
+        margin-left:10px;
+        color: $color-text-info;
+    }
+    &-filters {
+        margin-top: 20px;
+    }
+    &-filter-row {
+        padding: 2px;
+        max-height: 350px;
+        overflow-x:hidden;
+        overflow-y:auto;
+        margin-bottom: $main-padding;
+        @include media(md){
+            max-height: 260px;
+        }
+    }
+    &-total-price {
+        font-size: 24px;
+        font-weight: 600;
+        margin-right: $main-grid-padding;
+        margin-bottom: $main-grid-padding;
+    }
+}
+
+.pages-slider {
+    display: flex;
+    padding: 0 $main-padding;
+    &-slider {
+        //max-width: 250px;
+    }
+    &-input {
+        margin-left: $main-grid-padding;
+        width: 60px;
+    }
+}
+
+.ml {
+    margin-left: 10px;
+    white-space: nowrap;
+}
+.mr {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.product-info {
+
+    &-block {
+        display: flex;
+        width: 100%;
+        background-color: $color-athensGray;
+        @include media(sm){
+            flex-direction: column;
+        }
+        &-image {
+            height: 400px;
+            width: 60%;
+            order: 2;
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            @include media(sm){
+                order: 1;
+                height: 320px;
+                width: 100%;
+            }
+            @include media(xs){
+                height: 250px;
+            }
+        }
+        &-info {
+            padding: $main-grid-padding;
+            position: relative;
+            width: 40%;
+            order: 1;
+            @include media(sm){
+                order: 2;
+                width: 100%;
+                padding: 10px $main-grid-padding;
+            }
+        }
+        &-text {
+            height: 100%;
+            font-size: 18px;
+            font-weight: 200;
+            width: auto;
+            padding: 30px 50px;
+            @include media(md){
+                padding: 20px;
+            }
+            @include media(xs){
+                font-size: 16px;
+                font-weight: normal;
+                padding: 0 0 15px;
+            }
+        }
+        &-header {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0;
+            margin-left: $main-margin-lg;
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1.4em;
+            text-transform: uppercase;
+            @include media(md){
+                margin-left: 20px;
+            }
+            @include media(sm){
+                position: static;
+                width: auto;
+                font-size: 48px;
+            }
+            @include media(xs){
+                margin-left: 0;
+                font-size: 36px;
+            }
+        }
+
+        &.left{
+            .product-info-block-image {
+                order: 1;
+            }
+            .product-info-block-info {
+                order: 2;
+            }
+        }
+    }
+
+    &-main{
+        display: flex;
+        justify-content: space-between;
+        padding: $main-margin 60px;
+        background-color: $color-white;
+        @include media(md){
+            padding: $main-margin 30px;
+        }
+        @include media(sm){
+           flex-direction: column;
+        }
+        @include media(xs){
+            padding: $main-margin 10px;
+        }
+        &-item{
+            //width: 33.3%;
+            padding: $main-padding;
+            font-size: 21px;
+            text-transform: uppercase;
+            @include media(sm){
+                display: flex;
+                justify-content: space-between;
+            }
+            @include media(xs){
+                flex-direction: column;
+                font-size: 18px;
+            }
+        }
+        &-label{
+            padding-top: 0;
+            font-weight: 600;
+            font-size: 21px;
+            margin-bottom: $main-margin-bottom;
+            @include media(sm){
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+            @include media(xs){
+                margin-bottom: $main-padding;
+            }
+        }
+        &-value{
+            font-weight: 200;
+            @include media(sm){
+                margin-bottom: 0;
+                text-align: right;
+            }
+            @include media(xs){
+                text-align: inherit;
+                margin-bottom: $main-margin-bottom;
+            }
+            small{
+                font-weight: normal;
+            }
+        }
+    }
+
+    &-last{
+        font-size: 18px;
+        font-weight: 200;
+        width: auto;
+        padding: 30px 50px;
+        @include media(md){
+            padding: 20px;
+        }
+        @include media(xs){
+            font-size: 16px;
+            font-weight: normal;
+            padding: 0 0 15px;
+        }
+    }
+}
+
+.product-table{
+    .table{
+        &-no-wrap{
+            white-space: nowrap;
+        }
+        &-column-pages{
+            max-width: 210px;
+        }
+        &-dop-page{
+            td{
+                color: $color-text-info;
+            }
+        }
+    }
+}

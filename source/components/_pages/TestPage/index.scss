@@ -1,0 +1,113 @@
+@import "~scss/config";
+
+.dnd {
+  display: flex;
+
+  &-panel {
+    width: 300px;
+    border-right: 1px solid $color-cadetGray;
+  }
+
+  &-drops {
+    padding-left: 20px;
+    width: auto;
+    flex-grow: 1;
+  }
+}
+
+.dropBg {
+  width: 80%;
+  padding: 20px;
+  background-color: #ddd;
+  border: 2px solid transparent;
+  transition: border-color $animation-duration-fast ease-out;
+  margin-bottom: 15px;
+
+  &.over {
+    border-color: $color-warning;
+  }
+}
+
+.dropBlock {
+  width: 300px;
+  padding: 10px;
+  min-height: 100px;
+  border: 2px solid $color-nepal;
+  background-color: rgba($color-white, 0);
+  transition: background-color $animation-duration-fast ease-out, border-color $animation-duration-fast ease-ou;
+
+  &.active {
+    background-color: rgba($color-white, .2);
+    border-color: $color-primary;
+  }
+
+  &.over {
+    background-color: rgba($color-white, .5);
+    border-color: $color-warning;
+  }
+}
+
+.dragItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #0d9fa7;
+  margin: 0 5px 10px;
+
+  &.photo {
+    background-color: #945;
+  }
+
+  &.frame {
+    background-color: #6a7bc1;
+  }
+
+  &.sticker {
+    background-color: #495;
+  }
+}
+
+.d2 {
+  width: 50%;
+  height: 100px;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid $color-cadetGray;
+  padding: 2px;
+
+  &-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+.scrollbar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid $color-cadetGray;
+  padding: 2px;
+
+  &-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+.rotatable-block {
+  position: relative;
+  height: 700px;
+
+  .square {
+    width: 20px;
+    height: 20px;
+  }
+}

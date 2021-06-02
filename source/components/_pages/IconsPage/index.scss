@@ -1,0 +1,28 @@
+@import "~scss/config";
+
+.icons-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: $main-margin-bottom;
+}
+.supericon{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 150px;
+    height: 80px;
+    border-radius: 6px;
+    margin: 0 5px 5px 0;
+    &:hover{
+        background-color: rgba($color-info,.2);
+    }
+    &-name{
+        display: block;
+        font-size: 14px;
+        margin-top: 10px;
+        max-width: 100%;
+    }
+}

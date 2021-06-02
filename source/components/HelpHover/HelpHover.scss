@@ -1,0 +1,9 @@
+@import '~scss/config';
+
+.help-hover{
+    fill: rgba($color-info,.8);
+    padding-bottom: 8px;
+    &:hover{
+        fill: $color-info;
+    }
+}

@@ -1,0 +1,148 @@
+@import "~scss/config";
+
+.side-menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $side-menu-width*-1;
+    width: $side-menu-width;
+    max-width: 90%;
+    background-color: $color-white;
+    transform: translate3d(0, 0, 0);
+    transition: transform 250ms ease-out;
+    padding: 1px 0 30px;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 3;
+    &-wrap {
+        z-index: 60;
+        &.transition {
+            &-exited {
+                .side-menu {
+                    transform: translate3d(0, 0, 0);
+                    &-shadow {
+                        opacity: .01;
+                    }
+                }
+            }
+            &-entering {
+                .side-menu {
+                    transform: translate3d($side-menu-width, 0, 0);
+                    &-shadow {
+                        opacity: 1;
+                    }
+                }
+            }
+            &-entered {
+                .side-menu {
+                    transform: translate3d($side-menu-width, 0, 0);
+                    &-shadow {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+            }
+            &-exiting {
+                .side-menu {
+                    transform: translate3d(0, 0, 0);
+
+                    &-shadow {
+                        opacity: .01;
+                    }
+                }
+            }
+        }
+
+        //&.right {
+        //    .side-menu {
+        //        right: $side-menu-width*-1;
+        //        left: auto;
+        //    }
+        //    &.show-side-menu {
+        //        .side-menu {
+        //            transform: translate3d($side-menu-width*-1, 0, 0);
+        //        }
+        //    }
+        //}
+    }
+    &-shadow {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba($color-black, .2);
+        opacity: 0;
+        transition: opacity $animation-duration-fast ease-out;
+        pointer-events: none;
+        z-index: 2;
+    }
+    // Шапка бокового меню с заголовком и кнопкой закрытия
+    &-header {
+        display: flex;
+        align-items: center;
+        height: $header-top-height;
+        //padding: $main-padding $main-padding $main-padding $main-padding*2;
+        border-bottom: 1px solid $color-cadetGray;
+        margin-bottom: $main-margin-bottom;
+        @include media(sm) {
+            height: $header-top-height-sm;
+        }
+    }
+    // Кнопка закрытия бокового  меню
+    &-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 0 $main-padding*2;
+        cursor: pointer;
+        &:hover {
+            color: $color-text-primary;
+            fill: $color-text-primary;
+            background-color: rgba($color-white, .5);
+        }
+    }
+    // Заголовок бокового  меню
+    &-title { margin-top: 0.125em;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    // Пункт бокового  меню
+    &-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: $main-padding $main-padding $main-padding $main-padding*3;
+        //border-bottom: 1px solid $color-cadetGray;
+        color: $color-text;
+        background-color: transparent;
+        cursor: pointer;
+        -webkit-user-drag: none;
+        user-select: none;
+        transition: color $animation-duration-fast ease-out, background-color $animation-duration-fast ease-out;
+        &:last-child {
+            border-bottom: none;
+        }
+        &:hover {
+            color: $color-text-primary;
+            background-color: rgba($color-info, .1);
+        }
+        &.active {
+            color: $color-text-warning;
+            background-color: transparent;
+            cursor: default;
+            //.cart-quantity{
+            //    display: none;
+            //}
+        }
+        &-divider {
+            height: 20px;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+@import "~scss/config";
+
+.top-image {
+    //position: relative;
+    height: 540px;
+    //width: 100%;
+    //margin-bottom: 30px;
+    @include media(md) {
+        height: 440px;
+    }
+    @include media(sm) {
+        height: 340px;
+    }
+    @include media(xs) {
+        height: 540px;
+    }
+    &-img{
+        height: 100%;
+        width: 50%;
+        margin-left: 50%;
+        background-image: url('images/startpage/holiday50/holiday50.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 100% 50%;
+        @include media(md) {
+            background-image: url('images/startpage/holiday50/holiday50.png');
+        }
+        @include media(xs) {
+            background-position: 50% 100%;
+            margin-left: 0;
+            width: 100%;
+            margin-top: 200px;
+            height: 300px;
+        }
+    }
+    &-block {
+        position: absolute;
+        top: 20%;
+        left: 20px;
+        right: 50%;
+        font-size: 21px;
+        text-align: left;
+        @include media(md) {
+            top: 18%;
+        }
+        @include media(sm) {
+        }
+        @include media(xs) {
+            right: 20px;
+            top: 30px;
+            text-align: center;
+        }
+    }
+    &-header {
+        color: #d87f26;
+        font-size: 60px;
+        line-height: 1.2em;
+        margin-bottom: 15px;
+        //max-width: 300px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        @include media(lg) {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        @include media(sm) {
+            font-size: 36px;
+
+        }
+        @include media(xs) {
+        }
+
+    }
+    &-btn {
+        font-size: 21px;
+        height: 50px;
+        padding: 0 20px;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: #f0765f;
+        color: #fff;
+        border: none;
+        box-shadow: none;
+        transition: background-color $animation-duration-fast ease-out;
+        &:hover{
+            background-color: lighten(#f0765f,4%);
+        }
+        &:active{
+            background-color: darken(#f0765f,3%);
+        }
+        @include media(sm) {
+            font-size: 18px;
+            padding: 0 10px;
+        }
+        @include media(xs) {
+            height: 40px;
+        }
+    }
+    &-text {
+        font-weight: 200;
+        margin-bottom: 30px;
+        @include media(sm) {
+            font-size: 18px;
+        }
+        @include media(xs) {
+            margin-bottom: 15px;
+        }
+    }
+}

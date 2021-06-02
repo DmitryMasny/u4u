@@ -1,0 +1,107 @@
+@import "~scss/config";
+
+.top-image {
+    position: relative;
+    background-color: #cccbcc;
+    background-image: url('images/startpage/default/main_bg_lg.png');
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 500px;
+    width: 100%;
+    @include media(lg) {
+        background-image: url('images/startpage/default/main_bg_md.png');
+        height: 400px;
+    }
+    @include media(ipad) {
+        background-image: url('images/startpage/default/main_bg_ipad.jpg');
+        height: 400px;
+    }
+    @include media(sm) {
+        background-image: url('images/startpage/default/main_bg_xs.png');
+        height: 600px;
+        background-position-y: 33%;
+    }
+    @include media(xs) {
+        height: 500px;
+    }
+    &-block {
+        position: absolute;
+        top: 15%;
+        left: 55%;
+        right: 20px;
+        font-size: 21px;
+        text-transform: uppercase;
+        text-align: left;
+        @include media(md) {
+            top: 18%;
+            left: 54%;
+        }
+        @include media(sm) {
+            left: 20px;
+            top: 90px;
+            text-align: center;
+        }
+        @include media(xs) {
+            top: 70px;
+        }
+    }
+    &-header {
+        color: #fa7e20;
+        font-size: 60px;
+        line-height: 1em;
+        margin-bottom: 30px;
+        max-width: 300px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding-top:0;
+
+        @include media(lg) {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        @include media(sm) {
+            max-width: none;
+        }
+        @include media(xs) {
+            font-size: 36px;
+        }
+
+    }
+    &-btn {
+        font-size: 21px;
+        margin-top: 15px;
+        height: 50px;
+        padding: 0 20px;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: $color-info !important;
+        color: #fff !important;
+        border: none;
+        box-shadow: none;
+        transition: background-color $animation-duration-fast ease-out;
+        &:hover{
+            background-color: #46b8ec !important;
+        }
+        &:active{
+            background-color: #2798cc !important;
+        }
+        @include media(xs) {
+            margin-top: 0;
+            font-size: 18px;
+            padding: 0 10px;
+        }
+    }
+    &-poligraphic {
+        color: #0083bb;
+        font-weight: 400;
+        font-size: 16px;
+        text-transform: none;
+        margin-top: 15px;
+        @include media(sm) {
+            margin-top: 10px;
+        }
+        @include media(xs) {
+            display: none;
+        }
+    }
+}

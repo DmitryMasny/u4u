@@ -1,0 +1,99 @@
+@import "~scss/config";
+
+.paginator {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $main-margin-bottom;
+    width: 100%;
+    &-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: $color-white;
+        padding: 0 7px;
+        border-radius: 25px;
+        transform: translateZ(0);
+    }
+    .pages-wrap{
+        //width: 400px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-item{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        //min-width: 40px;
+        min-width: 32px;
+        padding: 0 3px;
+        margin: 0 3px;
+        font-size: 14px;
+        border-radius: 16px;
+        white-space: nowrap;
+        cursor: pointer;
+        user-select: none;
+        &.arrow{
+            min-width: 32px;
+        }
+        &:hover{
+            background-color: rgba($color-primary,.1);
+            color: $color-primary;
+        }
+        &.active{
+            color: $color-white;
+            background-color: $color-ecstasy;
+            cursor: default;
+        }
+        &.sm{
+            font-size: 14px;
+        }
+        &.disabled{
+            pointer-events: none;
+            opacity: .33;
+        }
+    }
+    .icon{
+        width: 24px;
+        height: 24px;
+    }
+    &.small {
+        .paginator-block{
+            padding: 0 3px;
+            margin-top: 10px;
+        }
+        .paginator-item{
+            margin: 0 1px;
+        }
+        .pages-wrap {
+            height: 40px;
+        }
+    }
+}
+.holder{
+    width: 100%;
+    height: 50px;
+}
+.fixed-holder{
+    position: fixed;
+    height: 50px;
+    bottom: 10px;
+    padding-left: 200px;
+    pointer-events: none;
+    @include media(lg){
+        padding-left: 160px;
+    }
+    @include media(sm){
+        padding-left: 0;
+    }
+    .paginator{
+        margin-bottom: 0;
+        &-block{
+            box-shadow: 1px 3px 20px rgba($color-black,.2);
+            pointer-events: all;
+        }
+    }
+}

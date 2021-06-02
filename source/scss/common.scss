@@ -1,0 +1,233 @@
+// шрифты
+@import './fonts';
+// константы
+@import './config';
+
+
+body{
+    height: 100%;
+    background: $main-bg;
+    color: $main-color;
+    fill: $main-color;
+    font-family: $main-font;
+    font-size: $main-font-size;
+    line-height: 1.2;
+    cursor: default;
+    overflow: hidden;
+    font-weight: 400;
+    -webkit-user-drag: none;
+}
+textarea {
+    color: $main-color;
+    fill: $main-color;
+    font-family: $main-font;
+    font-size: $main-font-size;
+}
+
+.main-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+
+    //transform: translateZ(0);
+    //filter: blur(0) grayscale(0%);
+    //filter: grayscale(0%);
+    //transition: transform $animation-duration-slow ease-in-out, filter $animation-duration-slow ease-in-out;
+    //-webkit-font-smoothing: antialiased !important;
+    //-moz-osx-font-smoothing: grayscale !important;
+
+    ////Открытие меню
+    //&.menu-open {
+    //    //filter: blur(3px) grayscale(60%);
+    //    filter: grayscale(60%);
+    //    transform: translateX($menu-width * -1);
+    //}
+}
+.page-loader{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 300;
+    pointer-events: none;
+}
+
+
+// ============================
+// Глобальные стили для импорта
+:global {
+    .layout-photo-not-events-off {
+        [data-current='layoutPhoto'],
+        [data-current='layoutBackground'],
+        [data-current='layoutText'],
+        [data-current='layoutSticker'],
+        [data-current='layoutShape'],
+        [data-current='clipPath'],
+        [data-current='controlActivateSVGLayout'],
+        #layoutControlBlock {
+            pointer-events: none;
+        }
+    }
+
+    .layout-photo-not-events-off-all {
+        [data-current='layoutPhoto'],
+        [data-current='layoutBackground'],
+        [data-current='layoutText'],
+        [data-current='layoutSticker'],
+        [data-current='layoutShape'],
+        [data-current='clipPath'],
+        [data-current='controlActivateSVGLayout'],
+        [data-current='layoutPhotoEmpty'],
+        #layoutControlBlock {
+            pointer-events: none;
+        }
+    }
+
+    .layout-drop-only-background {
+        [data-current='layoutPhoto'],
+        [data-current='layoutText'],
+        [data-current='layoutBackground'],
+        [data-current='layoutSticker'],
+        [data-current='layoutShape'],
+        [data-current='clipPath'],
+        [data-current='controlActivateSVGLayout'],
+        [data-current='layoutPhotoEmpty'],
+        #layoutControlBlock {
+            pointer-events: none;
+        }
+    }
+
+    .grecaptcha-badge {
+        display: none!important;
+    }
+    //#spa - самый главный контейнер
+    #spa{
+        height: 100%;
+        width: 100%;
+        transform: translateZ(0);
+        overflow: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        &.noscroll{
+            overflow-y: auto;
+        }
+    }
+
+    //  Колонна с ограничением по ширине, используется,
+    // если нам не надо растягивать содержимое на весь широкий экран
+    .section {
+        position: relative;
+        max-width: $media-lg + $main-grid-padding * 2;
+        padding: 0 $main-grid-padding;
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    //Блок флекс-сетки. Имеет отрицательный margin, внутренние блоки должны иметь padding: initial $main-grid-padding;
+    .grid {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin: 0 $main-grid-padding*-1;
+        &-item {
+            width: 100%;
+            padding: 0 $main-grid-padding;
+        }
+    }
+
+    //  Ссылки
+    a {
+        color: $main-color-link;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color .1s ease-out;
+        &:hover {
+            color: $main-color-link-hover;
+            text-decoration: none;
+        }
+    }
+
+    /**
+     * Размеры заголовков
+     */
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+        font-family: $main-heading-font;
+        margin: 0 0 $h-margin-bottom;
+        padding-top: 10px;
+        //text-transform: uppercase;
+        font-weight: 400;
+        line-height: 1.2em;
+    }
+
+    h1, .h1 {
+        font-size: $h1-font-size;
+        font-weight: $h1-font-weight;
+        text-transform: uppercase;
+    }
+
+    h2, .h2 {
+        font-size: $h2-font-size;
+        //line-height: 1em;
+    }
+
+    h3, .h3 {
+        font-size: $h3-font-size;
+        //line-height: 1em;
+    }
+
+    h4, .h4 {
+        font-size: $h4-font-size;
+        //line-height: 1em;
+    }
+
+    /**
+     * Списки
+     */
+    ul, ol {
+        list-style: none;
+        padding-left: 2em;
+        margin: .5em 0 1em;
+        li{
+            margin-bottom: .5em;
+        }
+    }
+    ol {
+        list-style-type: decimal-leading-zero;
+    }
+    ul li:before {
+        content:  "—";
+        position: relative;
+        margin-left: -1.4em;
+        margin-right: 0.7em;
+    }
+    hr {
+        width: 100%;
+        border: none;
+        height: 1px;
+        background-color: $color-line;
+        margin-top: $main-margin-bottom*2;
+    }
+    // скрываем базовую кнопку Jivosite
+    #jvlabelWrap, .wrap_mW, .__jivoMobileButton {
+        display: none !important;
+    }
+    .Toastify__toast{
+        &--info {
+            background: $color-info;
+        }
+        &--success {
+            background: $color-success;
+        }
+        &--warning {
+            background: $color-warning;
+        }
+        &--error {
+            background: $color-danger;
+        }
+    }
+}

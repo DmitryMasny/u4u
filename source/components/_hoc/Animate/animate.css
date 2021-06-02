@@ -1,0 +1,20 @@
+.product-list-enter {
+    //opacity: 0.01;
+}
+
+.product-list-enter.product-list-enter-active {
+    //opacity: 1;
+    //transition: opacity 500ms ease-in;
+}
+
+.product-list-leave {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.product-list-leave.product-list-leave-active {
+    opacity: 0.01;
+    transition: all 500ms ease-in;
+    transform: scale(0);
+}
+

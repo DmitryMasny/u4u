@@ -1,0 +1,30 @@
+
+.admin-btn {
+    position: fixed;
+    cursor: pointer;
+    z-index: 80;
+    top: 5px;
+    left: 5px;
+    padding: 5px;
+    padding-right: 15px;
+    background: #d83f46;
+    color: #fff;
+    border-radius: 6px;
+    opacity: .9;
+    transform: translateX(-95%);
+    transition: transform .2s ease-out;
+    &:hover{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.bodyFrame {
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid #d83f46;
+    z-index: 999;
+}

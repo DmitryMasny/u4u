@@ -1,0 +1,250 @@
+/**
+  Конфигурация стилей (константы)
+ */
+
+//==== МЕДИА ===
+$media-xs: 576px; //Смартфоны
+$media-sm: 768px; //Планшеты
+$media-md: 992px; //Нетбуки
+$media-lg: 1240px; //Ноутбуки
+$media-xl: 1480px; //big-size
+$media-hsm: 800px; //Маленькая высота
+
+//==== ЦВЕТА ===
+//Базовые цвета (используются исключительно в этом же файле);
+$color-white: #ffffff;
+$color-athensGray: #f2f3f5;
+$color-lavenderMist: #dde5ef;
+$color-cadetGray: #b3c6dd;
+//$color-cadetGray2: #bed0dd; определить, какой лучше
+$color-black: #131825;
+$color-charcoal: #3d4c62;
+$color-raven: #6e7a8e;
+$color-hibiscus: #cc2f69;
+$color-denim: #137ed5;
+$color-blue: #2099d0;
+$color-ecstasy: #f68225;
+$color-valencia: #d83f46;
+$color-apple: #5c993d;
+$color-logo-1:#136db7;
+$color-logo-2:#12a3d6;
+
+//==== ОБЩЕЕ ===
+$main-bg: $color-white; //Основной фон
+$main-page-bg: $color-lavenderMist; //Фон страницы
+$main-padding: 10px; //Отступы от краев экрана
+$main-font-size: 16px;
+$main-icon-size: 1.5; //размер иконок в em. При тексте 16px иконка = 24px
+$main-icon-size-px: 24px;
+$main-scrollbar-size: 15px;
+$main-grid-padding: $main-padding*2;
+$main-margin-bottom: $main-font-size;
+
+//Шрифты
+//$font-exo2: 'Exo 2';
+//$font-exo2c: 'Exo 2 Condensed';
+$font-roboto: 'Roboto';
+$font-gilroy: 'Gilroy';
+
+//Текст и ссылки
+//$main-font: $font-roboto;
+$main-font: $font-gilroy;
+$main-heading-font: $font-gilroy;
+$main-color: $color-charcoal;
+$main-color-hover: $color-denim;
+$main-color-link: darken($color-denim, 7%);
+$main-color-link-hover: $color-denim;
+$text-small-size: 15px;
+$text-small-lh: $text-small-size*1.2;   //16px
+
+//Заголовки
+$h1-font-size: 2.4em;
+$h1-font-weight: 400;
+$h2-font-size: 1.8em;
+$h3-font-size: 1.4em;
+$h4-font-size: 1.2em;
+$h-margin-bottom: 0.5em;
+
+//ФОРМЫ
+
+//$form-input-width: 256px;
+//$form-input-heigth: 72px;
+
+//Цвета
+$form-color: $color-cadetGray;
+$form-color-active: $color-denim;
+$form-color-text: $main-color;
+$form-color-label: $color-raven;
+$form-color-error: $color-valencia;
+
+
+//ШАПКА
+$header-top-height: 60px;
+$header-bottom-height: 40px;
+
+//Лого
+$logo-color-1: $color-logo-1;
+$logo-color-2: $color-logo-2;
+
+//Меню шапки
+$header-menu-height: 46px;
+$header-menu-font: $font-gilroy;
+$header-menu-font-size: 18px;
+$header-menu-padding: 10px;
+
+//Боковое меню
+$menu-line-height: 46px;
+$menu-width: 300px;
+
+
+//КНОПКИ
+$btns-height: 40px;
+$btns-icon-size: $main-icon-size * 1em;
+$btns-padding: $main-padding;
+$btns-margin-b: $main-font-size;
+$btns-border-width: 2px; //Ширина бордера, если он есть
+$btns-filter-border-width: 1px; //Ширина бордера для кнопки типа "фильтр"
+$btns-border-radius: 5px;
+$btns-icon-margin: 5px;
+$btns-sort-margin: 2px;
+
+//Кнопки - цвета
+$btns-bg-default: $color-lavenderMist;
+$btns-bg-gradient-default: linear-gradient(to bottom, #f8fbff 0%, #e1e7ef 100%);
+$btns-color-default: $color-charcoal;
+$btns-icon-color-default: $color-raven;
+$btns-border-color-default: $color-raven;
+$btns-filter-border-color: $color-cadetGray;
+$btns-color-active: $color-denim;
+$btns-color-main: $color-denim;
+$btns-color-red: $color-valencia;
+$btns-color-orange: $color-ecstasy;
+$btns-color-green: $color-apple;
+$btns-color-white: $color-white;
+
+//КОНТЕКСТНОЕ МЕНЮ
+$context-menu-padding: $main-padding;
+$context-menu-bg: $color-white;
+$context-menu-color: $color-charcoal;
+$context-menu-color-selected: $color-denim;
+$context-menu-shadow: 1px 1px 15px rgba($context-menu-color, .3);
+$context-menu-line: 1px dotted $color-cadetGray;
+$context-menu-br: $context-menu-padding; //border-radius
+
+//==== МОДАЛЬНОЕ ОКНО ===
+$modal-wrap-padding: 40px;
+$modal-padding: $main-padding;
+$modal-block-padding: $modal-padding*2 $modal-padding;
+$modal-block-bg: $color-white;
+$modal-block-min-width: 250px;
+$modal-block-xs-width: 300px;
+$modal-block-sm-width: 450px;
+$modal-block-md-width: 700px;
+$modal-block-lg-width: 1000px;
+$modal-block-shadow: 1px 1px 25px rgba($color-black, .3);
+$modal-back-bg: rgba($color-charcoal, .7);
+$modal-header-font-size: $h3-font-size;
+$modal-close-btn-bg: $color-black;
+$modal-close-btn-color: $color-white;
+$modal-close-btn-padding: 4px;
+$modal-close-btn-size: $modal-close-btn-padding*2 + $main-icon-size-px;
+$modal-close-btn-top: -8px;
+$modal-close-btn-right: -1 * $modal-close-btn-size - $modal-close-btn-padding;
+
+
+
+/***************
+     РЕДАКТОР
+***************/
+
+//==== ШАПКА РЕДАКТОРА ===
+$header-height: 46px; //высота шапки
+$header-bottomLine: 4px; //линия под шапкой
+$header-bg: $color-white; //фон шапки
+//табы разделов
+$header-tabs-height: $header-height - $header-bottomLine;
+$header-tabs-font-size: $main-font-size;
+
+$header-tabs-color: $color-charcoal;
+$header-tabs-color-hover: $color-denim;
+$header-tabs-color-selected: $color-white;
+$header-tabs-bg: transparent;
+$header-tabs-bg-selected: $color-denim;
+
+$header-tabs-margin-left: 300px;
+$header-tabs-margin-left-sm: 100px;
+$header-tabs-padding: 12px;
+$header-tabs-border-radius-top: 6px;
+$header-tabs-border-radius-bottom: 10px;
+
+//Кнопки шапки
+$header-save-color: $color-raven;
+$header-save-color-done: $color-apple;
+
+//==== ГАЛЕРЕЯ ===
+//gallery control bar - кнопки позиционирования галереи
+$gallery-control-bar-size: 34px; //рамер контрол бара по высоте
+$gallery-control-bar-color: $color-charcoal; //цвет контрол бара
+$gallery-control-bar-btns-size: $main-icon-size * $main-font-size; //размер иконок
+$gallery-control-bar-btns-padding: $main-padding; //отступ боковых кнопкок в панели
+$gallery-control-bar-btns-color: $color-cadetGray; //цвет кнопки
+$gallery-control-bar-btns-color-hover: $color-white;
+
+//gallery control bar когда галерея сбоку
+$gallery-control-bar-size-right: 4px; //ширина линии между альбомом и галереей (при .content_right)
+$gallery-control-bar-btns-bg-right: $color-raven; //фон кнопки (галерея сбоку)
+$gallery-control-bar-btns-align: -15px; //сдвиг кнопки
+$gallery-control-bar-btns-bottom: 20px; //отступ кнопок снизу
+$gallery-control-bar-btns-between: 10px; //отступ между кнопками
+$gallery-control-bar-topbtn-bottom: $gallery-control-bar-size + $gallery-control-bar-btns-bottom +
+$gallery-control-bar-btns-between; //отступ верхней кнопки
+
+//gallery nav - основное меню галереи
+$gallery-main-menu-btn-font-size: $main-font-size;
+$gallery-main-menu-btn-color: $color-white;
+$gallery-main-menu-btn-background: transparent;
+$gallery-main-menu-btn-border-radius: 6px;
+$gallery-main-menu-btn-margin-top: -6px; //отступ или выступ вкладки сверху. Рекомендуется -6px(выступ) или 4px
+$gallery-main-menu-btn-height: $gallery-control-bar-size - $gallery-main-menu-btn-margin-top + 1;
+$gallery-main-menu-btn-line-height: $gallery-control-bar-size - $gallery-main-menu-btn-margin-top*2;
+$gallery-main-menu-btn-color-selected: $color-charcoal;
+$gallery-main-menu-btn-background-selected: $color-white;
+$gallery-main-menu-btn-max-width: 115px;
+
+//==== АЛЬБОМ ===
+//album && album layer
+$album-layer-background: $color-lavenderMist; //цвет фона зоны альбома
+$album-margin-w: 50px;
+$album-margin-h: 30px;
+
+//==== СТРАНИЦЫ АЛЬБОМА ===
+//album && album layer
+$album-thums-arrow-width: 40px;
+$album-thums-height: 80px;
+$album-thums-wrap-margin-h: 5px;
+$album-thums-border: 2px;
+$album-thums-border-radius: 2px;
+$album-thums-margin-between: 5px;
+$album-thums-border-color: $color-cadetGray;
+$album-thums-border-color-hover: darken($color-cadetGray, 5%);
+$album-thums-border-color-active: $color-denim;
+$album-thums-bg-color: $color-white;
+
+$album-thums-wrap-margin-w: $main-padding;
+$album-thums-wrap-height: $album-thums-height - $album-thums-wrap-margin-h;
+$album-thums-page-height: $album-thums-wrap-height - $main-scrollbar-size - $album-thums-border;
+$album-thums-image-height: $album-thums-page-height - $album-thums-border*2;
+
+//==== ИНСТРУМЕНТЫ ===
+$tools-btns-size: $btns-height; //Высота кнопок инструментов
+$tools-padding: 10px; //Отступы от кнопок
+$tools-btns-padding: $tools-padding * .5; //Отступы между кнопками
+$tools-inner-height: $tools-btns-size + $tools-padding*2; //Высота панели инструментов (левой, правой и средней)
+$tools-border-radius: $tools-padding; //Радиус скруглений
+$tools-line-top-height: 8px; //Отступ между инструментами и библиотекой
+$tools-line-bottom-height: 8px; //не используется
+$tools-height: $tools-inner-height + $tools-line-top-height + $tools-line-bottom-height;
+$tools-color-top: $color-white;
+$tools-color-bottom: $color-lavenderMist;
+$tools-width-middle-min: 410px;
+$tools-width-middle-max: 440px;

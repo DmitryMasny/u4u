@@ -1,0 +1,17 @@
+@import "~scss/config";
+
+.album-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 0;
+    //overflow: hidden; // не ставить, т.к. обрежутся пружинки в coverPreview
+
+    //20x20 //30x30
+    &_s2, &_s5 {padding-bottom: 100%;}
+
+    //20x30
+    &_s4 {padding-bottom: 148%;}
+
+    //30x20
+    &_s3 {padding-bottom: 66.7%;}
+}

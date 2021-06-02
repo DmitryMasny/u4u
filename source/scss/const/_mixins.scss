@@ -1,0 +1,61 @@
+//@import "./config";
+
+@mixin footer-menu-item() {
+    display: flex;
+    align-items: center;
+    font-size: $footer-font-size;
+    line-height: 1em;
+    color: $footer-color;
+    padding: $footer-padding/2 0 $footer-padding/2  $footer-padding;
+    text-decoration: none;
+}
+
+@mixin footer-menu-item-link() {
+    @include footer-menu-item();
+    color: $footer-link-color;
+    cursor: pointer;
+    transition: color .12s ease-out;
+    &:hover, &:active {
+        color: $footer-color-hover;
+    }
+}
+
+@mixin header-menu-item-link() {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 200;
+    //line-height: $header-top-height;
+    margin-left: 5px;
+    padding: 0 5px;
+    color: $color-text;
+    -webkit-user-drag: none;
+    text-decoration: none;
+    user-select: none;
+    transition: background-color .22s ease-out;
+    cursor: pointer;
+    &:hover {
+        color: $color-text-primary;
+    }
+    &:first-child{
+        margin-left: 0;
+    }
+    &:last-child{
+        padding-right: 2px;
+    }
+    //@include media(sm){
+    //    line-height: $header-top-height-sm;
+    //}
+}
+
+@mixin btn-bluegray() {
+    background-color: $color-bluegray;
+    color: $color-white;
+    &:hover{
+        background-color: darken($color-bluegray,3%);
+    }
+    &:active, &.active {
+        background-color: darken($color-bluegray,6%);
+    }
+}

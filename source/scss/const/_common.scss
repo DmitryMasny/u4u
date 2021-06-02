@@ -1,0 +1,19 @@
+//==== Общие константы ===
+
+// Фоны
+$main-bg: $color-white;             // Основной фон
+//$main-page-bg: $color-athensGray;   // Фон страницы
+$main-page-bg: $color-white;        // Фон страницы
+// Лого
+$logo-color-1: $color-logo-1;       // Синий
+$logo-color-2: $color-logo-2;       // Голубой
+//Ширина бокового меню
+$side-menu-width: 250px;
+
+// Длительность анимации
+$animation-duration-fast: .12s;
+$animation-duration-medium: .2s;
+$animation-duration-slow: .4s;
+
+// Высота хлебных крох
+$breadcrumbs-height: 30px;

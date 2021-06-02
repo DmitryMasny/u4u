@@ -1,0 +1,209 @@
+@import "~scss/config";
+
+$profile-avatar-size: 180px;
+
+.tab-content {
+}
+
+.profile {
+    // Блок  с аватаркой
+    &-avatar {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 30px;
+        @include media(xs) {
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: $profile-avatar-size;
+            height: $profile-avatar-size;
+            border-radius: $profile-avatar-size/2;
+            @include media(xs) {
+                width: $profile-avatar-size/2;
+                height: $profile-avatar-size/2;
+            }
+            &-label {
+                display: inline-block;
+                cursor: pointer;
+                margin-left: 20px;
+                @include media(xs) {
+                    margin-left: 0;
+                    margin-top: 15px;
+                }
+                .avatar-btn {
+                    pointer-events: none;
+                }
+                & > input {
+                    display: none;
+                }
+                &:hover {
+                    .avatar-btn {
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+        &-btn{
+            &-wrap{
+                display: flex;
+                align-items: center;
+            }
+            &-clear{
+                margin-left: 5px;
+            }
+        }
+    }
+    // Блок формы персональный данных
+    &-personal {
+        width: 100%;
+        margin-bottom: $main-margin-bottom;
+        .personal {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+            &-name {
+                width: 66.66%;
+                padding: 0 10px;
+                @include media(sm) {
+                    width: 100%;
+                }
+            }
+            &-gender {
+                display: flex;
+                align-items: center;
+                width: 33.33%;
+                margin-top: 21px;
+                padding: 0 10px;
+                @include media(sm) {
+                    margin-top: 0;
+                    width: 100%;
+                }
+            }
+            &-email {
+                width: 66.66%;
+                padding: 0 10px;
+                @include media(sm) {
+                    width: 100%;
+                }
+            }
+            &-phone {
+                width: 33.33%;
+                padding: 0 10px;
+                @include media(sm) {
+                    width: 100%;
+                }
+            }
+            &-actions {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 15px;
+                padding: 0 10px;
+                width: 100%;
+                @include media(xs) {
+                    flex-direction: column-reverse;
+                }
+            }
+            &-btn-logout{
+                @include media(xs) {
+                    margin-top: $main-margin-bottom;
+                }
+            }
+        }
+
+    }
+
+    // Блок смены пароля
+    &-pwd {
+        width: 100%;
+        max-width: 320px;
+        margin-bottom: $main-margin-bottom;
+    }
+
+    // Блок привязки соцсетей
+    &-social {
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: $main-margin-bottom;
+        .social {
+            &-text {
+                font-size: 18px;
+                margin-bottom: $main-margin-bottom*2;
+            }
+            &-wrap {
+            }
+            &-item {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: 10px 0;
+                border-radius: 2px;
+                margin-bottom: $main-margin-bottom;
+                //transition: background-color $animation-duration-fast ease-out;
+                //&:hover{
+                //    background-color: $color-athensGray;
+                //}
+                @include media(xs) {
+                    flex-direction: column;
+                    border-bottom: 2px dotted $color-line;
+                    padding-bottom: 25px;
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+                &-image {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background: $color-athensGray center center no-repeat;
+                    background-size: cover;
+                    flex-shrink: 0;
+                }
+                &-icon {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background-color: $color-lavenderMist;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    fill: $color-raven;
+                }
+                &-text {
+                    margin: 0 20px;
+                    font-size: 18px;
+                    flex: 1 1 auto;
+                    color: $color-raven;
+
+                    @include media(xs) {
+                        margin: 10px 0;
+                    }
+                }
+                &-btn {
+                    min-width: 100px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+.full-width{
+    width: 100%;
+}
+.icon-good{
+    position: absolute;
+    right: -30px;
+    top: 27px;
+    fill: $color-success;
+}
+.spinner{
+    display: block;
+    height: 40px;
+    width: auto;
+    float: right;
+    margin: 0 5px;
+    padding-top: 5px;
+}

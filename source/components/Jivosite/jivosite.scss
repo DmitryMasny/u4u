@@ -1,0 +1,35 @@
+@import "~scss/config";
+
+.jivo-btn {
+    $JBsize: 50px;
+    $JBsizeXs: 40px;
+    width: $JBsize;
+    height: $JBsize;
+    border-radius: $JBsize/2;
+    position: fixed;
+    //bottom: 10px;
+    bottom: 60px;
+
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($color-nepal, .33);
+    fill: $color-white;
+    cursor: pointer;
+    transition: background-color $animation-duration-fast ease-out;
+    @include media(xs) {
+        width: $JBsizeXs;
+        height: $JBsizeXs;
+        border-radius: $JBsizeXs/2;
+    }
+    @include media(iPhone5){
+        bottom: 60px;
+    }
+    &:hover {
+        background-color: rgba($color-success, .75);
+    }
+    &:active {
+        background-color: $color-success;
+    }
+}

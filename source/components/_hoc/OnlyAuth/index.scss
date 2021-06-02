@@ -1,0 +1,26 @@
+@import '~scss/config';
+
+.only-auth {
+    max-width: 400px;
+    margin: 50px auto;
+    &-title {
+        text-align: center;
+        @include media(xs){
+            font-size: 1.2em;
+            padding: 10px 20px 0;
+            text-align: left;
+        }
+    }
+    &-modal {
+        padding: 10px 20px;
+        margin-bottom: $main-margin-bottom;
+        border-radius: 10px;
+        border: 1px solid $color-line;
+        box-shadow: 1px 4px 15px rgba($color-black, 0.2);
+        @include media(xs){
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+        }
+    }
+}

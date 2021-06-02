@@ -1,0 +1,49 @@
+@import "~scss/config";
+
+.page {
+    //position: relative;
+    flex: 1 0 auto;
+    background-color: $main-page-bg;
+    @include media(xs){
+        min-height: calc(100vh - 100px);
+        padding-bottom: 20px;
+    }
+    &-inner{
+        composes: section from global;
+        padding: $main-grid-padding;
+        @include media(xs){
+            padding: $main-padding $main-grid-padding;
+        }
+    }
+    &-title{
+        display: inline-block;
+        margin-bottom: $main-margin-bottom;
+        margin-right: 30px;
+        &-h{
+            display: inline;
+            //font-weight: 200;
+            font-size: 28px;
+            text-transform: uppercase;
+            //border-bottom: 1px solid $color-text;
+            @include media(xs) {
+                font-size: 21px;
+                line-height: 28px;
+            }
+        }
+        &.center{
+            text-align: center;
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+}
+.wrapper{
+    position: relative;
+    max-width: $media-md + $main-margin*2;
+    margin: 0 auto;
+    padding: $main-grid-padding;
+    flex-grow: 1;
+    @include media(xs){
+        padding: $main-padding 0;
+    }
+}

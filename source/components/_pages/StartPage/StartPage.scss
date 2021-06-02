@@ -1,0 +1,142 @@
+@import "~scss/config";
+
+.page {
+    composes: page from global;
+    //background-color: $color-white;
+    &-inner {
+        composes: section from global;
+    }
+}
+
+.photobook-types {
+    //margin: $main-margin-lg auto;
+
+    @include media(md) {
+        padding: 0;
+    }
+    &-header {
+        position: relative;
+        font-weight: 600;
+        text-transform: none;
+        font-size: 48px;
+        //margin-left: $main-margin-lg*-1;
+        //height: 8px;
+        z-index: 7;
+        @include media(md) {
+            margin-left: $main-grid-padding;
+            height: auto;
+        }
+    }
+}
+
+.photobook-type {
+    width: 100%;
+    display: flex;
+    //background-color: #f0f0ef;
+    background-color: $color-athensGray;
+    margin-bottom: $main-margin-bottom*2;
+    border-radius: 6px;
+    overflow: hidden;
+    //height: 330px;
+    //background-color: $color-white;
+    //background-color: $color-lavenderMist;
+    //&:nth-child(odd){
+    //    background-color: lighten($color-lavenderMist,3%);
+    //}
+
+    @include media(md) {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+    }
+    @include media(sm) {
+        flex-wrap: wrap;
+        //margin: 0 $main-grid-padding;
+        //width: calc(100% - #{$main-grid-padding} * 2);
+    }
+    &-image-block {
+        width: 67%;
+        //padding: $main-padding*2 ;
+        @include media(xl) {
+            width: 50%;
+        }
+        @include media(sm) {
+            order: 1;
+            width: 100%;
+        }
+    }
+    &-info {
+        padding: 0 $main-padding*2 $main-margin-bottom;
+        width: 33%;
+        @include media(xl) {
+            width: 50%;
+        }
+        @include media(sm) {
+            order: 2;
+            width: 100%;
+            padding-bottom: $main-margin-bottom*2;
+        }
+    }
+    &-header {
+        padding: $main-padding*3 0 $main-padding/2;
+        text-transform: none;
+        font-size: 18px;
+        border-bottom: 1px solid $color-line;
+        @include media(sm) {
+            padding-top: $main-padding;
+        }
+    }
+    &-text {
+        color: $color-raven;
+    }
+    &-btn {
+        margin-bottom: $main-margin-bottom;
+    }
+}
+
+.promo {
+    background-color: $color-danger;
+    color: $color-white;
+    text-align: center;
+    &-header {
+        padding: 100px 0;
+    }
+}
+
+.advantages {
+    &-row {
+        margin: 0 $main-padding*-1 30px;
+        display: flex;
+        @include media(sm){
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 $main-padding;
+        width: 25%;
+        text-align: center;
+        @include media(sm){
+            width: 75%;
+            flex-direction: row;
+            text-align: left;
+        }
+        @include media(xs){
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}

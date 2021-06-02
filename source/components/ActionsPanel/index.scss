@@ -1,0 +1,172 @@
+@import "~scss/config";
+
+.actions-panel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    margin: 0 -10px;
+    width: calc(100% + 20px);
+    background-color: $color-white;
+    padding: 4px;
+    min-height: 44px;
+    border-radius: 25px;
+    transform: translateZ(0);
+    box-shadow: 1px 3px 20px rgba($color-black, 0);
+    transition: opacity $animation-duration-medium ease-out;
+    &.fixed  {
+        box-shadow: 1px 3px 20px rgba($color-black, .2);
+    }
+    &.disabled  {
+        pointer-events: none;
+
+    }
+    &.mobile {
+        padding: 0 3px;
+        margin-top: 10px;
+        .actions-panel{
+            &-btn {
+                margin: 0 1px;
+                font-size: 14px;
+            }
+            &-info {
+                line-height: 41px;
+                font-size: 14px;
+            }
+        }
+
+    }
+    .menuBtn {
+        border: 2px solid $color-cadetGray;
+    }
+    &-btn {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 32px;
+        min-width: 32px;
+        border-radius: 16px;
+        padding: 0 10px;
+        margin: 2px 3px;
+        font-size: 16px;
+        background-color: $color-white;
+        color: $color-text;
+        white-space: nowrap;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color $animation-duration-fast ease-out;
+        &:hover {
+            background-color: $color-athensGray;
+            color: $color-text;
+            .action-btn-icon {
+                stroke: $color-text;
+            }
+        }
+
+        &.no-text, &.rounded {
+            padding: 0;
+            .action-btn-icon {
+                margin-right: 0;
+            }
+        }
+        &:not(.no-text) {
+            .action-btn-icon {
+                margin-right: 5px;
+                @include media(md) {
+                    display: none;
+                }
+            }
+        }
+        &.primary {
+            &:hover {
+                background-color: rgba($color-primary, .1);
+                color: $color-text-primary;
+                .action-btn-icon {
+                    stroke: $color-primary;
+                }
+            }
+        }
+        &.main {
+            background-color: $color-primary;
+            color: $color-white;
+            .action-btn-icon {
+                stroke: $color-white;
+            }
+            &:hover {
+                background-color: darken($color-primary, 5%);
+                color: $color-white;
+                .action-btn-icon {
+                    stroke: $color-white;
+                }
+            }
+        }
+        &.info {
+            &:hover {
+                background-color: rgba($color-info, .12);
+                color: darken($color-text-info, 5%);
+                .action-btn-icon {
+                    stroke: darken($color-info, 5%);
+                }
+            }
+        }
+        &.danger {
+            &:hover {
+                color: $color-text-danger;
+                background-color: rgba($color-danger, .1);
+                .action-btn-icon {
+                    stroke: $color-danger;
+                }
+            }
+        }
+
+        &.disabled {
+            background-color: rgba($color-mute, .1);
+            color: $color-text-mute;
+            pointer-events: none;
+            .action-btn-icon {
+                stroke: $color-text-mute;
+            }
+        }
+
+    }
+
+    .divider {
+        flex-grow: 1;
+    }
+
+    &-menu {
+        display: flex;
+        flex-direction: column;
+        &-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            padding-right: 10px;
+            height: 40px;
+            cursor: pointer;
+            .action-btn-icon {
+                position: absolute;
+                left: 10px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                stroke: $color-text-mute;
+            }
+            &:hover {
+                color: $color-text-primary;
+                .action-btn-icon {
+                    stroke: $color-text-primary;
+                }
+            }
+        }
+        &-divider {
+            margin: 5px 10px;
+            width: calc(100% - 20px);
+            height: 1px;
+            background-color: #bed0dd;
+        }
+    }
+}
